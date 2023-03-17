@@ -31,8 +31,9 @@ code {
 }
 
 .recommendations-page .webpage-container {
+  top: 15%;
   width: 100%;
-  height: 75%;
+  height: 15%;
   position: relative;
 }
 
@@ -76,8 +77,8 @@ code {
 }
 
 .recommendations-page .webpage-subtitle {
+  margin: 0;
   font-size: 5em;
-  line-height: .25em;
 }
 
 .bubbles {
@@ -119,4 +120,54 @@ code {
   border-radius: 2em;
   border: 0px solid indigo;
   box-shadow: 1em .75em indigo;
+}
+
+.recommendations-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-carousel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5em;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+}
+
+.recommendation-card {
+  background-color: darkblue;
+  opacity: 0.6;
+  width: 20%;
+  margin: 1em;
+  height: 75%;
+  text-align: center;
+}
+
+.recommendation-card:hover {
+  background-color: darkslateblue;
+  opacity: 1;
+  width: 25%;
+  height: 80%;
+}
+
+.recommendation-title {
+  padding: 1em;
+  color: white;
+}
+
+.recommendation-text {
+  background-color: white;
+  padding: 1em;
+  color: black;
+  height: 75%;
+  bottom: 100%;
+  text-align: left;
 }
