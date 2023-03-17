@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +7,101 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(150, 185, 237);
+  display: grid;
+  place-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.webpage-container {
+  position: absolute;
+  width: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-journal .webpage-container {
+  width: 100%;
+  height: 75%;
+}
+
+.webpage-link {
+  display: block;
+  font-size: 7em;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+
+  background: linear-gradient(
+    to right,
+    rgba(100, 200, 200, 1),
+    rgba(100, 200, 200, 1)
+  ), linear-gradient(
+    to right,
+    rgba(255, 0, 0, 1),
+    rgba(255, 0, 180, 1),
+    rgba(0, 100, 200, 1)
+  );
+  background-size: 100% 5px, 0 5px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.webpage-link:hover {
+  background-size: 0 5px, 100% 5px;
+}
+
+.webpage-subtitle {
+  font-size: 4em;
+  color: white;
+  text-align: center;
+  line-height: 0;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.bubble {
+  position: absolute;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: rgb(212, 212, 255);
+  left: 10%;
+  top: 10%;
+  transform: translate(
+    var(--parallax-x, 0),
+    var(--parallax-y, 0)
+  );
+}
+
+.journal-prompt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.journal-input {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.5em;
+  border-radius: 2em;
+  border: 0px solid indigo;
+  box-shadow: 1em .75em indigo;
 }
