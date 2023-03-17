@@ -19,6 +19,8 @@ const Bubbles = () => {
 
         root.style.setProperty('--parallax-x', `${parallaxX}em`)
         root.style.setProperty('--parallax-y', `${parallaxY}em`)
+        // const bubbleDivs = document.querySelectorAll('.bubble')
+        // console.log(bubbleDivs)
     })
 
     return (
