@@ -276,3 +276,75 @@ code {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+.calendar-events-container {
+  margin: 0 2.5em;
+  padding: 1em 1.5em;
+  border-radius: 1em;
+  background-color: white;
+  line-height: .5em;
+  text-align: left;
+  height: 50%;
+  overflow: auto;
+}
+
+.calendar-events-header {
+  padding-bottom: .5em;
+}
+
+.calendar-event-card {
+  background-color: rgb(187, 255, 255);
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border-radius: 1em;
+}
+
+.calendar-event-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.journal-top-pad {
+  height: 15%;
+}
+
+.journal-entries-container {
+  margin: 0 2.5em;
+  padding: 1em 1.5em;
+  border-radius: 1em;
+  background-color: white;
+  line-height: .5em;
+  text-align: left;
+  height: 75%;
+  overflow: auto;
+}
+
+.journal-container-header {
+  padding-bottom: .5em;
+}
+
+.journal-entry-card {
+  background-color: rgb(187, 255, 255);
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border-radius: 1em;
+}
+
+.journal-entry-card h1 {
+  padding-bottom: .5em;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  margin-block: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lightgrey;
+  border-radius: 1em;
+  border: white .3em solid;
+}
