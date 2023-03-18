@@ -12,6 +12,7 @@ const JournalPrompt = ({ prompt }) => {
                 console.log(document.getElementById('journal-query').value)
                 document.getElementById('journal-query').value = ''
                 e.preventDefault()
+                window.location.href = '/recommendations'
             }}>
                 <label for='journal-query'></label>
                 <input type='text' 
