@@ -1,5 +1,7 @@
 
 import './App.css';
+import 'react-calendar/dist/Calendar.css'
+import './components/Calendar.css'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home'
