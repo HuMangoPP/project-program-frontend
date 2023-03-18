@@ -6,6 +6,7 @@ import Home from './pages/home'
 import MainJournal from './pages/mainJournal'
 import Recommendations from './pages/recommendations'
 import TasksPage from './pages/tasks';
+import SingleTaskPage from './pages/singleTask';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/journal' element={<MainJournal />} />
         <Route path='/recommendations' element={<Recommendations />} />
         <Route path='/tasks' element={< TasksPage />} />
+        <Route path='/task' element={<SingleTaskPage />} />
       </Routes>
     </Router>
   )
