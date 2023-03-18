@@ -224,6 +224,11 @@ code {
   justify-content: center;
 }
 
+.closed-calendar:hover {
+  width: 20em;
+  height: 20em;
+}
+
 .closed-journal {
   position: absolute;
   background-color: aqua;
@@ -236,6 +241,11 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.closed-journal:hover {
+  width: 20em;
+  height: 20em;
 }
 
 .opened-calendar {
@@ -254,4 +264,15 @@ code {
   right: 0;
   width: 50%;
   height: 100%;
+}
+
+.calendar-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 75%;
+  padding: 3em;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
