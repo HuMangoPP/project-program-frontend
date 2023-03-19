@@ -8,7 +8,7 @@ import './styles/TaskCollection.css'
 import './styles/Recommendations.css'
 import './styles/MainJournal.css'
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home'
 import Login from './pages/login';
 import MainJournal from './pages/mainJournal'
@@ -18,16 +18,14 @@ import SingleTaskPage from './pages/singleTask';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/journal' element={<MainJournal />} />
-        <Route path='/recommendations' element={<Recommendations />} />
-        <Route path='/tasks' element={< TasksPage />} />
-        <Route path='/task' element={<SingleTaskPage />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/journal' element={<MainJournal />} />
+      <Route path='/recommendations' element={<Recommendations />} />
+      <Route path='/tasks' element={< TasksPage />} />
+      <Route path='/task' element={<SingleTaskPage />} />
+    </Routes>
   )
 }
 

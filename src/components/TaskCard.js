@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const TaskCard = ({ title, text, color }) => {
+
+    const navigate = useNavigate()
 
     const cardStyle = {
         backgroundColor: color
@@ -18,9 +21,7 @@ const TaskCard = ({ title, text, color }) => {
 
     return (
         <div className='task-card'
-             onClick={() => {
-                window.location.href = '/task'
-             }}
+             onClick={() => navigate('/task')}
              onMouseOut={() => setFace(false)}
              onMouseOver={() => setFace(true)}>
             <div className='task-card-text' style={cardStyle}>
