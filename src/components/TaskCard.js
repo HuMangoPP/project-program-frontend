@@ -21,8 +21,8 @@ const TaskCard = ({ title, text, color }) => {
              onClick={() => {
                 window.location.href = '/task'
              }}
-             onMouseOver={() => setFace(true)}
-             onMouseOut={() => setFace(false)}>
+             onMouseOut={() => setFace(false)}
+             onMouseOver={() => setFace(true)}>
             <div className='task-card-text' style={cardStyle}>
             {face ? <p>{text}</p> :
                     <h1>{title}</h1>}

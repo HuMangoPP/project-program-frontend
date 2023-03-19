@@ -1,7 +1,12 @@
 
 import './App.css';
 import 'react-calendar/dist/Calendar.css'
-import './components/Calendar.css'
+import './styles/Calendar.css'
+import './styles/Login.css'
+import './styles/SingleTask.css'
+import './styles/TaskCollection.css'
+import './styles/Recommendations.css'
+import './styles/MainJournal.css'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home'

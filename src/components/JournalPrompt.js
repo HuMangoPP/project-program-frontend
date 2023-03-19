@@ -19,7 +19,7 @@ const JournalPrompt = ({ prompt }) => {
                         id='journal-query' 
                         name='journal-query'
                         className='journal-input' 
-                        placeholder={prompt}/>
+                        placeholder={prompt} />
             </form>
         </div>
     )

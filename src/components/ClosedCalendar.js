@@ -1,9 +1,10 @@
+import { BsCalendarCheck } from 'react-icons/bs'
 
 const ClosedCalendar = ({ onOpen }) => {
     return (
         <div className='closed-calendar'
              onClick={onOpen}>
-            <h1>Calendar</h1>
+            <BsCalendarCheck color={'white'} size={'6em'} />
         </div>
     )
 }
