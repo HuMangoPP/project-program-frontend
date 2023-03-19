@@ -179,12 +179,18 @@ code {
 
 .task-card {
   width: 100%;
-  height: 10%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
 }
 
 .task-card:hover {
-  min-height: 25%;
-  width: 150%;
+  min-height: 50%;
+  width: 150%; 
+}
+
+.task-card-text {
+  height: 75%;
 }
 
 .task-card h1 {
@@ -194,6 +200,18 @@ code {
 .task-card p {
   padding: 0 .5em;
   font-size: 1.125em;
+}
+
+.task-card-triangles {
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+}
+
+.task-card-right-triangle, .task-card-left-triangle {
+  width: 50%;
+  height: 100%;
+
 }
 
 .single-task-page {
