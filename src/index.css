@@ -348,3 +348,30 @@ code {
   border-radius: 1em;
   border: white .3em solid;
 }
+
+.login-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 50%;
+  border-radius: 1.5em;
+  text-align: center;
+}
+
+.login-btn {
+  color: black;
+  background-color: rgb(190, 255, 255);
+  border: 0 black solid;
+  padding: 1em;
+  margin-top: 50%;
+  width: 75%;
+  border-radius: 1em;
+  font-size: 1.125em;
+}
+
+.login-btn:hover {
+  background-color: rgb(150, 255, 255);
+}

@@ -5,6 +5,7 @@ import './components/Calendar.css'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home'
+import Login from './pages/login';
 import MainJournal from './pages/mainJournal'
 import Recommendations from './pages/recommendations'
 import TasksPage from './pages/tasks';
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/journal' element={<MainJournal />} />
         <Route path='/recommendations' element={<Recommendations />} />
         <Route path='/tasks' element={< TasksPage />} />
