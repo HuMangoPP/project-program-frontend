@@ -8,7 +8,7 @@ const Home = () => {
             <Header 
                 title='Title' 
                 subtitle='Subtitle'
-                link='/journal' />
+                link='/login' />
         </div>
     )
 }

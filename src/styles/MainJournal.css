@@ -1,0 +1,18 @@
+.journal-prompt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  
+  .journal-input {
+    width: 100%;
+    padding: 1em;
+    font-size: 1.5em;
+    border-radius: 2em;
+    border: 0px solid var(--discordblue);
+    box-shadow: 1em .75em var(--darkblue);
+  }

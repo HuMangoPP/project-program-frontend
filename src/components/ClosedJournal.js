@@ -1,9 +1,10 @@
+import { BsFillJournalBookmarkFill } from 'react-icons/bs'
 
 const ClosedJournal = ({ onOpen }) => {
     return (
         <div className='closed-journal'
              onClick={onOpen}>
-            <h1>Journal</h1>
+            <BsFillJournalBookmarkFill color={'white'} size={'6em'}/>
         </div>
     )
 }

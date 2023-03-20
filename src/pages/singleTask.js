@@ -5,16 +5,14 @@ import OpenedCalendar from '../components/OpenedCalendar'
 import OpenedJournal from '../components/OpenedJournal'
 import { useState } from 'react'
 import Header from '../components/Header'
-
 const SingleTaskPage = ({ task }) => {
 
     const [journalOpen, setJournalOpen] = useState(false)
     const [calendarOpen, setCalendarOpen] = useState(false)
 
-    
-
     return (
         <div className='single-task-page' >
+
             {calendarOpen ? 
                 <OpenedCalendar onClose={() => setCalendarOpen(false)}/> : 
                 <ClosedCalendar onOpen={() => setCalendarOpen(true)} />}
