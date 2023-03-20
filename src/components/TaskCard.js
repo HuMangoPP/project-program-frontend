@@ -5,10 +5,6 @@ const TaskCard = ({ title, text, color }) => {
 
     const navigate = useNavigate()
 
-    const cardStyle = {
-        backgroundColor: color
-    }
-
     const rightTriangleStyle = {
         background: `linear-gradient(to right bottom, ${color} 0 50%, transparent 50% 100%)`
     }
@@ -17,7 +13,23 @@ const TaskCard = ({ title, text, color }) => {
         background: `linear-gradient(to left bottom, ${color} 0 50%, transparent 50% 100%)`
     }
 
+    const cardStyle = {
+        backgroundColor: color
+    }
+
     const [face, setFace] = useState(false)
+
+    const textStyle = {
+        display: `${face ? 'block' : 'none'}`
+    }
+
+    const titleStyle = {
+        display: `${face ? 'none' : 'block'}`
+    }
+
+    const triangleStyle = {
+        display: `${face ? 'flex' : 'none'}`
+    }
 
     return (
         <div className='task-card'
@@ -25,14 +37,13 @@ const TaskCard = ({ title, text, color }) => {
              onMouseOut={() => setFace(false)}
              onMouseOver={() => setFace(true)}>
             <div className='task-card-text' style={cardStyle}>
-            {face ? <p>{text}</p> :
-                    <h1>{title}</h1>}
+                <h1 style={titleStyle}>{title}</h1>
+                <p style={textStyle}>{text}</p>
             </div>
-            {face ? 
-            <div className='task-card-triangles'>
+            <div className='task-card-triangles' style={triangleStyle}>
                 <div className='task-card-right-triangle' style={rightTriangleStyle}></div>
                 <div className='task-card-left-triangle' style={leftTriangleStyle}></div>
-            </div> : <div></div>}
+            </div>
         </div>
     )
 }
