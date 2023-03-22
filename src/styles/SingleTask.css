@@ -194,3 +194,59 @@
     border-radius: 1em;
     border: white .3em solid;
   }
+
+  .new-calendar-event {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 1em 1em var(--discordblue), -1em -1em var(--discordlightgrey);
+    border-radius: 1em;
+  }
+
+  .new-calendar-event h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+
+  .new-calendar-event-title {
+    width: 80%;
+    padding: .5em;
+    margin-block: 1em;
+  }
+
+  .new-calendar-event-input {
+    width: 80%;
+    height: 20%;
+    word-wrap: normal;
+    margin-block: .5em;
+    padding: .5em;
+    resize: none;
+    word-wrap: normal;
+  }
+
+  .new-calendar-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar-form-submit {
+    position: absolute;
+    top: 90%;
+  }
+
+  .new-journal-entry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: -1em 1em var(--discordblue), 1em -1em var(--discordlightgrey);
+    border-radius: 1em;
+  }

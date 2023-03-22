@@ -1,7 +1,11 @@
 import JournalEntries from "./JournalEntries"
 import JournalEntry from "./JournalEntry"
+import { useState } from 'react'
+import NewJournalEntry from "./NewJournalEntry"
 
 const OpenedJournal = () => {
+
+    const [journalForm, setJournalForm] = useState(false)
 
     let numEntires = 6
     let journalEntries = []
@@ -14,7 +18,8 @@ const OpenedJournal = () => {
     return (
         <div className='opened-journal'>
             <div className='journal-top-pad'></div>
-            <JournalEntries journalEntries={journalEntries} />
+            <JournalEntries journalEntries={journalEntries} openForm={() => setJournalForm(!journalForm)}/>
+            {journalForm ? <NewJournalEntry /> : <div />}
             <div className='journal-bottom-pad'></div>
         </div>
     )
