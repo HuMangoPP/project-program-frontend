@@ -93,6 +93,9 @@
   }
   
   .calendar-events-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding-bottom: .5em;
   }
   
@@ -107,6 +110,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .add-event {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-inline: .5em;
+    border-radius: .5em;
+    background-color: white;
+  }
+
+  .add-event:hover {
+    background-color: var(--lightblue);
   }
   
   .journal-top-pad {
@@ -125,7 +141,23 @@
   }
   
   .journal-container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding-bottom: .5em;
+  }
+
+  .add-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    padding-inline: .5em;
+    border-radius: .5em;
+  }
+
+  .add-entry:hover {
+    background-color: var(--lightblue);
   }
   
   .journal-entry-card {
