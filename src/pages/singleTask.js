@@ -12,13 +12,16 @@ const SingleTaskPage = ({ task }) => {
 
     return (
         <div className='single-task-page' >
-
+            <div className='calendar-half' onClick={() => setJournalOpen(false)}>
             {calendarOpen ? 
-                <OpenedCalendar onClose={() => setCalendarOpen(false)}/> : 
+                <OpenedCalendar /> : 
                 <ClosedCalendar onOpen={() => setCalendarOpen(true)} />}
+            </div>
+            <div className='journal-half' onClick={() => setCalendarOpen(false)}>
             {journalOpen ? 
-                <OpenedJournal onClose={() => setJournalOpen(false)}/> : 
+                <OpenedJournal /> : 
                 <ClosedJournal onOpen={() => setJournalOpen(true)} />}
+            </div>
             <Header title='' subtitle='Task' link='' />
         </div> 
     )

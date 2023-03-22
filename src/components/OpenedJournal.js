@@ -1,7 +1,7 @@
 import JournalEntries from "./JournalEntries"
 import JournalEntry from "./JournalEntry"
 
-const OpenedJournal = ({ onClose }) => {
+const OpenedJournal = () => {
 
     let numEntires = 6
     let journalEntries = []
@@ -12,7 +12,7 @@ const OpenedJournal = ({ onClose }) => {
     }
 
     return (
-        <div className='opened-journal' onClick={onClose}>
+        <div className='opened-journal'>
             <div className='journal-top-pad'></div>
             <JournalEntries journalEntries={journalEntries} />
             <div className='journal-bottom-pad'></div>

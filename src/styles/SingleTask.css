@@ -2,6 +2,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
     top: 0;
     left: 0;
@@ -10,6 +12,14 @@
   
   .single-task-page .webpage-container {
     top: 10%;
+  }
+
+  .calendar-half {
+    width: 50%;
+  }
+
+  .journal-half {
+    width: 50%;
   }
   
   .closed-calendar {

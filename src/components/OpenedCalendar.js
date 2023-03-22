@@ -8,7 +8,7 @@ import Calendar from 'react-calendar'
 import CalendarEvent from "./CalendarEvent"
 import CalendarEvents from "./CalendarEvents"
 
-const OpenedCalendar = ({ onClose }) => {
+const OpenedCalendar = () => {
 
     const [currentEvents, setCurrentEvents] = useState([])
     let numEvents = 5
@@ -23,7 +23,7 @@ const OpenedCalendar = ({ onClose }) => {
     const [date, setDate] = useState(new Date())
 
     return (
-        <div className='opened-calendar' onClick={onClose}>
+        <div className='opened-calendar'>
             <div className='calendar-container'>
                 <Calendar onChange={setDate} value={date} />
             </div>
