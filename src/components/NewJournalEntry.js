@@ -3,13 +3,14 @@ const NewJournalEntry = ({ closeForm }) => {
     const handleSubmit = e => {
         e.preventDefault()
         const field = document.getElementById('journal-field').value
-        if (field) {
-            console.log({
-                field,
-            })
-            closeForm()
-        }
         
+        if (!field) return
+
+        console.log({
+            field,
+        })
+        
+        closeForm()
     }
 
     return (

@@ -9,6 +9,14 @@ const NewCalendarEvent = ({ closeForm }) => {
         const startTime = document.getElementById('new-calendar-event-start').value
         const endTime = document.getElementById('new-calendar-event-end').value
 
+        if (!title) return
+
+        if (!desc) return
+
+        if (!startTime) return
+
+        if (!endTime) return
+
         console.log({
             title,
             desc,

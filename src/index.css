@@ -109,3 +109,39 @@ code {
     var(--parallax-y, 0)
   );
 }
+
+.warp-btn {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--discordblue);
+  color: white;
+  transform: translate(-50%, -50%);
+  opacity: 0.75;
+  width: 15em;
+  height: 15em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+
+  transition: transform .5s;
+}
+
+.warp-btn:hover {
+  cursor: pointer;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.warp-btn h1 {
+  width: 75%;
+}
+
+.surrounding-bubbles {
+  position: absolute;
+  background-color: var(--discordblue);
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+}
