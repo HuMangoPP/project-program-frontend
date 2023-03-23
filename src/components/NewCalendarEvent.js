@@ -26,7 +26,7 @@ const NewCalendarEvent = () => {
                     </div>
                 </div>
             </div>
-            <button className='submit-event' onClick={() => console.log('click')}>New Event</button>
+            <button className='submit-btn' onClick={() => console.log('click')}>New Event</button>
         </div>
     )
 }

@@ -212,6 +212,13 @@
     margin-bottom: 0;
   }
 
+  .new-calendar-event button {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, 0);
+  }
+
   .new-calendar-form-title {
     display: flex;
     flex-direction: column;
@@ -277,23 +284,61 @@
     border-bottom: .25em solid black;
   }
 
-  .submit-event {
-    position: absolute;
+  .submit-btn {
     background-color: white;
     border: 1px solid black;
     font-size: 1.5em;
     border-bottom: .2em solid black;
-    bottom: 10%;
     left: 50%;
-    transform: translate(-50%, 0);
+    width: fit-content;
+    padding-inline: .5em;
+    padding-block: .25em;
   }
 
-  .submit-event:hover {
+  .submit-btn:hover {
     background-color: var(--discordlightgrey);
   }
 
-  .submit-event:active {
+  .submit-btn:active {
     background-color: var(--discordlightgrey);
-    transform: translate(-50%, 10%);
     border-bottom: .1em solid black;
+    margin-top: .1em;
+  }
+
+  .new-journal-entry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: -1em 1em var(--discordblue), 1em -1em var(--discordlightgrey);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1em;
+    
+  }
+
+  .new-journal-entry h1 {
+    line-height: 0;
+  }
+
+  .new-journal-entry-body {
+    width: 100%;
+    height: 70%;
+    transform: translate(0, -5%);
+  }
+
+  .journal-field {
+    padding: .5em;
+    width: 80%;
+    height: 100%;
+    resize: none;
+    border: 1px solid black;
+    border-bottom: .25em solid black;
+    font-size: 1.5em;
   }
