@@ -205,6 +205,7 @@
     background-color: white;
     box-shadow: 1em 1em var(--discordblue), -1em -1em var(--discordlightgrey);
     border-radius: 1em;
+    padding-inline: 1.5em;
   }
 
   .new-calendar-event h1 {
@@ -212,32 +213,27 @@
     margin-bottom: 0;
   }
 
-  .new-calendar-event button {
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
-    transform: translate(-50%, 0);
-  }
-
   .new-calendar-form-title {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-inline: 1.5em;
+    font-size: 1.25em;
   }
 
   .new-calendar-event-title {
     padding: .5em;
+    padding-inline: .75em;
     border: 1px solid black;
     border-bottom: .3em solid black;
+    font-size: 1em;
   }
 
   .new-calendar-form-desc {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-inline: 1.5em;
     margin-block: 1em;
+    font-size: 1.25em;
   }
 
   .new-calendar-event-desc {
@@ -245,29 +241,30 @@
     height: 15%;
     resize: none;
     padding: .5em;
+    padding-inline: .75em;
     border: 1px solid black;
-    border-bottom: .3em solid black;
+    border-bottom: .4em solid black;
+    font-size: 1em;
   }
 
   .new-calendar-form-time {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-block: 1em;
+    font-size: 1.25em;
   }
 
   .new-calendar-form-start {
     display: flex;
     flex-direction: column;
-    margin-inline: 1.5em;
     text-align: left;
   }
 
   .new-calendar-form-end {
     display: flex;
     flex-direction: column;
-    margin-inline: 1.5em;
-    text-align: left;
+    text-align: right;
   }
 
   .new-calendar-event-start input[type="time"] {
@@ -287,12 +284,12 @@
   .submit-btn {
     background-color: white;
     border: 1px solid black;
-    font-size: 1.5em;
-    border-bottom: .2em solid black;
-    left: 50%;
+    font-size: 1.25em;
+    border-bottom: .3em solid black;
     width: fit-content;
     padding-inline: .5em;
     padding-block: .25em;
+    cursor: pointer;
   }
 
   .submit-btn:hover {
@@ -302,7 +299,13 @@
   .submit-btn:active {
     background-color: var(--discordlightgrey);
     border-bottom: .1em solid black;
-    margin-top: .1em;
+    margin-top: .2em;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .new-journal-entry {
@@ -320,11 +323,16 @@
     justify-content: space-between;
     align-items: center;
     padding-block: 1em;
+    padding-inline: 1.5em;
     
   }
 
   .new-journal-entry h1 {
     line-height: 0;
+  }
+
+  .new-journal-entry .btn-container {
+    width: 90%;
   }
 
   .new-journal-entry-body {
@@ -335,7 +343,7 @@
 
   .journal-field {
     padding: .5em;
-    width: 80%;
+    width: 90%;
     height: 100%;
     resize: none;
     border: 1px solid black;

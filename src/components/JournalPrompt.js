@@ -7,7 +7,11 @@ const JournalPrompt = ({ prompt }) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        document.getElementById('journal-query').value=''
+        const query = document.getElementById('journal-query').value
+        console.log({
+            query,
+        })
+        document.getElementById('journal-query').value = ''
 
         navigate('/recommendations')
     }

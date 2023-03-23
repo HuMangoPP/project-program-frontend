@@ -26,7 +26,7 @@ const OpenedCalendar = () => {
                 <Calendar onChange={setDate} value={date} />
             </div>
             <CalendarEvents events={events} openForm={() => setCalendarForm(!calendarForm)}/>
-            {calendarForm ? <NewCalendarEvent /> : <div />}
+            {calendarForm ? <NewCalendarEvent closeForm={() => setCalendarForm(!calendarForm)} /> : <div />}
         </div>
     )
 }

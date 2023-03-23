@@ -19,7 +19,7 @@ const OpenedJournal = () => {
         <div className='opened-journal'>
             <div className='journal-top-pad'></div>
             <JournalEntries journalEntries={journalEntries} openForm={() => setJournalForm(!journalForm)}/>
-            {journalForm ? <NewJournalEntry /> : <div />}
+            {journalForm ? <NewJournalEntry closeForm={() => setJournalForm(!journalForm)}/> : <div />}
             <div className='journal-bottom-pad'></div>
         </div>
     )
