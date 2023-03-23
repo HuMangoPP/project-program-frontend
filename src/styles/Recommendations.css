@@ -25,13 +25,16 @@
     margin: 1em;
     height: 75%;
     text-align: center;
+    border-radius: 1em;
+
+    transition: transform .5s;
   }
   
   .recommendation-card:hover {
     background-color: var(--darkdarkblue);
     opacity: 1;
-    width: 25%;
-    height: 80%;
+    transform: scale(1.125);
+    cursor: pointer;
   }
   
   .recommendation-title {
@@ -46,4 +49,6 @@
     height: 75%;
     bottom: 100%;
     text-align: left;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
   }

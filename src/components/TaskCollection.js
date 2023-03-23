@@ -1,4 +1,5 @@
 import TaskCard from "./TaskCard"
+import WarpButton from "./WarpButton"
 
 const TaskCollection = () => {
 
@@ -15,6 +16,8 @@ const TaskCollection = () => {
 
     return (
         <div className='task-collection'>
+            <WarpButton link='/journal' text='Return to Journal' 
+                        top={90} left={5} />
             {taskCards}
         </div>
     )

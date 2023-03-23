@@ -1,7 +1,7 @@
 const Bubble = ({ top, left, size }) => {
     const bubbleStyle = {
-        top: top,
-        left: left,
+        top,
+        left,
         width: size,
         height: size,
     }

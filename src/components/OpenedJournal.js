@@ -1,7 +1,11 @@
 import JournalEntries from "./JournalEntries"
 import JournalEntry from "./JournalEntry"
+import { useState } from 'react'
+import NewJournalEntry from "./NewJournalEntry"
 
-const OpenedJournal = ({ onClose }) => {
+const OpenedJournal = () => {
+
+    const [journalForm, setJournalForm] = useState(false)
 
     let numEntires = 6
     let journalEntries = []
@@ -12,9 +16,10 @@ const OpenedJournal = ({ onClose }) => {
     }
 
     return (
-        <div className='opened-journal' onClick={onClose}>
+        <div className='opened-journal'>
             <div className='journal-top-pad'></div>
-            <JournalEntries journalEntries={journalEntries} />
+            <JournalEntries journalEntries={journalEntries} openForm={() => setJournalForm(!journalForm)}/>
+            {journalForm ? <NewJournalEntry closeForm={() => setJournalForm(!journalForm)}/> : <div />}
             <div className='journal-bottom-pad'></div>
         </div>
     )

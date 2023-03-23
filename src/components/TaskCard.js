@@ -27,10 +27,6 @@ const TaskCard = ({ title, text, color }) => {
         display: `${face ? 'none' : 'block'}`
     }
 
-    const triangleStyle = {
-        display: `${face ? 'flex' : 'none'}`
-    }
-
     return (
         <div className='task-card'
              onClick={() => navigate('/task')}
@@ -40,7 +36,7 @@ const TaskCard = ({ title, text, color }) => {
                 <h1 style={titleStyle}>{title}</h1>
                 <p style={textStyle}>{text}</p>
             </div>
-            <div className='task-card-triangles' style={triangleStyle}>
+            <div className='task-card-triangles' >
                 <div className='task-card-right-triangle' style={rightTriangleStyle}></div>
                 <div className='task-card-left-triangle' style={leftTriangleStyle}></div>
             </div>
