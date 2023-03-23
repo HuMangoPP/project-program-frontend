@@ -1,30 +1,32 @@
 
 const NewCalendarEvent = () => {
+
     return (
         <div className='new-calendar-event'>
             <h1>New Event</h1>
-            <form className='new-calendar-form'>
+            <div className='new-calendar-form-title'>
                 <label>Event Title</label>
                 <input type='text' className='new-calendar-event-title'></input>
+            </div>
+            <div className='new-calendar-form-desc'>
                 <label>Event Description</label>
-                <textarea 
-                type='text'
-                cols='10'
-                className='new-calendar-event-input'></textarea>
-                <input type='submit' value='Submit' className='calendar-form-submit'/>
-                <label>Start Time</label>
-                <input type='text'></input>
-                <div>
-                    <button onClick={(e) => e.preventDefault()}>AM</button>
-                    <button onClick={(e) => e.preventDefault()}>PM</button>
+                <textarea type='text' className='new-calendar-event-desc'></textarea>
+            </div>
+            <div className='new-calendar-form-time'>
+                <div className='new-calendar-form-start'>
+                    <label>Start Time</label>
+                    <div className='new-calendar-event-start'>
+                        <input type='time'></input>
+                    </div>
                 </div>
+                <div className='new-calendar-form-end'>
                 <label>End Time</label>
-                <input type='text'></input>
-                <div>
-                    <button onClick={(e) => e.preventDefault()}>AM</button>
-                    <button onClick={(e) => e.preventDefault()}>PM</button>
+                    <div className='new-calendar-event-end'>
+                        <input type='time' className='new-calendar-event-end'></input>
+                    </div>
                 </div>
-            </form>
+            </div>
+            <button className='submit-event' onClick={() => console.log('click')}>New Event</button>
         </div>
     )
 }

@@ -212,41 +212,88 @@
     margin-bottom: 0;
   }
 
+  .new-calendar-form-title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-inline: 1.5em;
+  }
+
   .new-calendar-event-title {
-    width: 80%;
     padding: .5em;
+    border: 1px solid black;
+    border-bottom: .3em solid black;
+  }
+
+  .new-calendar-form-desc {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-inline: 1.5em;
     margin-block: 1em;
   }
 
-  .new-calendar-event-input {
-    width: 80%;
-    height: 20%;
-    word-wrap: normal;
-    margin-block: .5em;
-    padding: .5em;
+  .new-calendar-event-desc {
+    position: relative;
+    height: 15%;
     resize: none;
-    word-wrap: normal;
+    padding: .5em;
+    border: 1px solid black;
+    border-bottom: .3em solid black;
   }
 
-  .new-calendar-form {
+  .new-calendar-form-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-block: 1em;
+  }
+
+  .new-calendar-form-start {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-inline: 1.5em;
+    text-align: left;
   }
 
-  .calendar-form-submit {
-    position: absolute;
-    top: 90%;
+  .new-calendar-form-end {
+    display: flex;
+    flex-direction: column;
+    margin-inline: 1.5em;
+    text-align: left;
   }
 
-  .new-journal-entry {
+  .new-calendar-event-start input[type="time"] {
+    font-size: 1.5em;
+    padding: .25em;
+    border: 1px solid black;
+    border-bottom: .25em solid black;
+  }
+
+  .new-calendar-event-end input[type="time"] {
+    font-size: 1.5em;
+    padding: .25em;
+    border: 1px solid black;
+    border-bottom: .25em solid black;
+  }
+
+  .submit-event {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    transform: translate(-50%, -50%);
     background-color: white;
-    box-shadow: -1em 1em var(--discordblue), 1em -1em var(--discordlightgrey);
-    border-radius: 1em;
+    border: 1px solid black;
+    font-size: 1.5em;
+    border-bottom: .2em solid black;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .submit-event:hover {
+    background-color: var(--discordlightgrey);
+  }
+
+  .submit-event:active {
+    background-color: var(--discordlightgrey);
+    transform: translate(-50%, 10%);
+    border-bottom: .1em solid black;
   }
