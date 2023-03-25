@@ -26,6 +26,7 @@ function App() {
   })
 
   const [queriedRecommendations, setQueriedRecommendations] = useState([])
+  const [userId, setUserId] = useState(0)
 
   useEffect(() => {
     document.title = 'Pufferfish'
@@ -34,7 +35,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/login' element={<Login />} />
+      <Route path='/login' element={<Login instance={instance} setUserId={setUserId} />} />
       <Route path='/journal' element={<MainJournal instance={instance} setRecommendations={setQueriedRecommendations} />} />
       <Route path='/recommendations' element={<Recommendations recommendations={queriedRecommendations} />} />
       <Route path='/tasks' element={< TasksPage />} />

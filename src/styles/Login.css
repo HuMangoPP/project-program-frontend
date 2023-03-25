@@ -77,37 +77,40 @@
   }
 
   .verification-code {
-    height: 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     opacity: 1;
 
     transition: opacity 1s
   }
 
-  .code-slot {
-    height: 50%;
-    width: 7%;
-    text-align: center;
-    font-size: 1.5em;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: .25em solid black;
-  }
-
-  .code-slot:focus {
-    outline: 1px solid black;
-  }
-
-  .code-slot:active {
-    border-top: none;
-    border-right: none;
-    border-left: none;
+  .code-input {
+    font-size: 1.25em;
+    width: 75%;
+    padding: .5em;
+    border: 2px solid black;
+    border-radius: .5em;
     border-bottom: .25em solid black;
   }
 
   .hidden-code {
     opacity: 0;
+  }
+
+  .login-btn {
+    align-self: center;
+  }
+
+  .warning-msg {
+    color: red;
+  }
+
+  .warning-shake {
+    animation: horizontal-shake .25s infinite;
+  }
+
+  @keyframes horizontal-shake {
+    0% {transform: translateX(0)}
+    25% {transform: translateX(.25em)}
+    50% {transform: translateX(-.25em)}
+    75% {transform: translateX(.25em)}
+    100% {transform: translateX(0)}
   }

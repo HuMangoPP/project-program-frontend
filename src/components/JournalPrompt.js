@@ -42,7 +42,6 @@ const JournalPrompt = ({ instance, setRecommendations }) => {
     return (
         <div className='journal-prompt'>
             <form onSubmit={handleSubmit}>
-                <label for='journal-query'></label>
                 <input type='text' 
                         id='journal-query' 
                         name='journal-query'
