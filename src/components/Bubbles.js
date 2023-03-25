@@ -1,14 +1,22 @@
 import Bubble from './Bubble'
+import { useState, useEffect } from 'react'
 
 const Bubbles = () => {
-    const numBubbles = 12
-    const tops = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*100)}%`)
-    const lefts = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*100)}%`)
-    const sizes = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*15+5)}em`)
-    let bubbles = []
-    for (let i=0; i<numBubbles; i++) {
-        bubbles.push(<Bubble top={tops[i]} left={lefts[i]} size={sizes[i]} />)
-    }
+    const [bubblesData, setBubblesData] = useState([])
+
+    useEffect(() => {
+        const numBubbles = 12
+        const tops = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*100)}%`)
+        const lefts = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*100)}%`)
+        const sizes = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*15+5)}em`)
+
+        let bubbles = []
+        for (let i=0; i<numBubbles; i++) {
+            bubbles.push(<Bubble top={tops[i]} left={lefts[i]} size={sizes[i]} />)
+        }
+
+        setBubblesData(bubbles)
+    }, [])
 
     const root = document.documentElement
     document.addEventListener('mousemove', evt => {
@@ -21,7 +29,7 @@ const Bubbles = () => {
 
     return (
         <div className='bubbles'>
-            {bubbles}
+            {bubblesData}
         </div>
     )
 }

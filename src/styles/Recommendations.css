@@ -71,6 +71,7 @@
 
   .recommendation-card-load-in {
     opacity: 0;
+    pointer-events: none;
   }
   
   .recommendation-title {
