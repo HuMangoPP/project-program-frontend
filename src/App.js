@@ -16,7 +16,14 @@ import Recommendations from './pages/recommendations'
 import TasksPage from './pages/tasks';
 import SingleTaskPage from './pages/singleTask';
 
+import axios from 'axios';
+
 function App() {
+
+  const instance = axios.create({
+    baseURL: 'http://pufferfishproject.pythonanywhere.com/'
+  })
+
   return (
     <Routes>
       <Route path='/' element={<Home />} />

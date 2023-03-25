@@ -3,7 +3,9 @@ import JournalPrompt from '../components/JournalPrompt'
 import Bubbles from '../components/Bubbles'
 import WarpButton from '../components/WarpButton'
 
+
 const MainJournal = () => {
+
     return (
         <div className='main-journal'>
             <Bubbles />

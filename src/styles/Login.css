@@ -8,6 +8,14 @@
     height: 50%;
     border-radius: 1.5em;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .login-card h1 {
+    line-height: 0;
+    margin-top: 0;
   }
   
   .login-btn {
@@ -15,7 +23,6 @@
     background-color: var(--babyblue);
     border: 0 black solid;
     padding: 1em;
-    margin-top: 50%;
     width: 75%;
     border-radius: 1em;
     font-size: 1.25em;
@@ -26,4 +33,81 @@
   .login-btn:hover {
     background-color: var(--discordblue);
     cursor: pointer;
+  }
+
+  .email-submission {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+
+  .email-input {
+    width: 75%;
+    padding: .5em;
+    padding-left: 1em;
+    font-size: 1.25em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-right: none;
+    border-bottom: .25em black solid;
+  }
+
+  .send-code-btn {
+    font-size: 1.25em;
+    padding-block: .25em;
+    width: fit-content;
+    background-color: white;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-bottom: .25em solid black;
+  }
+
+  .send-code-btn:hover {
+    background-color: var(--lightbluegrey);
+  }
+
+  .send-code-btn:active {
+    margin-top: .25em;
+    border-bottom: none;
+  }
+
+  .verification-code {
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    opacity: 1;
+
+    transition: opacity 1s
+  }
+
+  .code-slot {
+    height: 50%;
+    width: 7%;
+    text-align: center;
+    font-size: 1.5em;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: .25em solid black;
+  }
+
+  .code-slot:focus {
+    outline: 1px solid black;
+  }
+
+  .code-slot:active {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: .25em solid black;
+  }
+
+  .hidden-code {
+    opacity: 0;
   }
