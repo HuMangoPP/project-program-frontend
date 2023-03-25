@@ -1,14 +1,13 @@
 import RecommendationCard from "./RecommendationCard"
 
-const CardCarousel = () => {
+const CardCarousel = ({ recommendations }) => {
 
-    const numCards = 5
+    const numCards = recommendations.length
     let cards = []
-    let selector = numCards/2
     for (let i=0; i<numCards; i++) {
         cards.push(
-            <RecommendationCard title={`card ${i}`} 
-                                desc={`this is card ${i}`} />
+            <RecommendationCard title={recommendations[i].habit} 
+                                desc={recommendations[i].desc} />
         )
     }
 

@@ -3,7 +3,7 @@ import Bubbles from "../components/Bubbles";
 import CardCarousel from "../components/CardCarousel"
 import WarpButton from "../components/WarpButton";
 
-const Recommendations = () => {
+const Recommendations = ({ recommendations }) => {
     return (
         <div className='recommendations-page'>
             <Bubbles />
@@ -12,7 +12,7 @@ const Recommendations = () => {
             <Header title=''
             subtitle='Do you see anything interesting?' />
             <WarpButton link='/tasks' top={10} left={95} text='Jump to Tasks' />
-            <CardCarousel />
+            <CardCarousel recommendations={recommendations} />
         </div>
     )
 }

@@ -16,6 +16,7 @@ import Recommendations from './pages/recommendations'
 import TasksPage from './pages/tasks';
 import SingleTaskPage from './pages/singleTask';
 
+import { useState, useEffect } from 'react'
 import axios from 'axios';
 
 function App() {
@@ -24,12 +25,18 @@ function App() {
     baseURL: 'http://pufferfishproject.pythonanywhere.com/'
   })
 
+  const [queriedRecommendations, setQueriedRecommendations] = useState([])
+
+  useEffect(() => {
+    console.log(queriedRecommendations)
+  }, [queriedRecommendations])
+
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />} />
-      <Route path='/journal' element={<MainJournal />} />
-      <Route path='/recommendations' element={<Recommendations />} />
+      <Route path='/journal' element={<MainJournal instance={instance} setRecommendations={setQueriedRecommendations} />} />
+      <Route path='/recommendations' element={<Recommendations recommendations={queriedRecommendations} />} />
       <Route path='/tasks' element={< TasksPage />} />
       <Route path='/task' element={<SingleTaskPage />} />
     </Routes>
