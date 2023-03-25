@@ -9,7 +9,9 @@ const JournalEntries = ({ journalEntries, openForm }) => {
                     <BsJournalPlus size={'2em'} onClick={() => openForm()}/>
                 </div>
             </div>
-            {journalEntries}
+            <div className='journal-entries-list'>
+                {journalEntries}
+            </div>
         </div>
     )
 }

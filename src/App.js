@@ -38,8 +38,8 @@ function App() {
       <Route path='/login' element={<Login instance={instance} setUserId={setUserId} />} />
       <Route path='/journal' element={<MainJournal instance={instance} setRecommendations={setQueriedRecommendations} />} />
       <Route path='/recommendations' element={<Recommendations recommendations={queriedRecommendations} />} />
-      <Route path='/tasks' element={< TasksPage />} />
-      <Route path='/task' element={<SingleTaskPage />} />
+      <Route path='/tasks' element={<TasksPage userId={userId} instance={instance} />} />
+      <Route path='/task' element={<SingleTaskPage userId={userId} instance={instance} />} />
     </Routes>
   )
 }

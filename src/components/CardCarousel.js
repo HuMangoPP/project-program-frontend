@@ -15,7 +15,6 @@ const CardCarousel = ({ recommendations }) => {
 
     setTimeout(() => {
         const els = document.getElementsByClassName('recommendation-card')
-        console.log(els)
 
         for (const el of els) {
             el.classList.remove('recommendation-card-load-in')

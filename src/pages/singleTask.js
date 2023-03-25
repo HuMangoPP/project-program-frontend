@@ -4,9 +4,8 @@ import ClosedJournal from '../components/ClosedJournal'
 import OpenedCalendar from '../components/OpenedCalendar'
 import OpenedJournal from '../components/OpenedJournal'
 import { useState } from 'react'
-import Header from '../components/Header'
 import WarpButton from '../components/WarpButton'
-const SingleTaskPage = ({ task }) => {
+const SingleTaskPage = ({ instance, userId }) => {
 
     const [journalOpen, setJournalOpen] = useState(false)
     const [calendarOpen, setCalendarOpen] = useState(false)

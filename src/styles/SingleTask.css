@@ -73,7 +73,8 @@
 
   .animate-opening {
     border-radius: 0;
-    width: 40%;
+    pointer-events: none;
+    width: 50%;
     height: 100%;
 
     transition: border-radius 1s, width 1s, height 1s;
@@ -124,7 +125,6 @@
     line-height: .5em;
     text-align: left;
     height: 50%;
-    overflow: auto;
   }
   
   .calendar-events-header {
@@ -132,6 +132,13 @@
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: .5em;
+  }
+
+  .calendar-events-list {
+    height: 85%;
+    width: 100%;
+    padding-right: 1em;
+    overflow: auto;
   }
   
   .calendar-event-card {
@@ -172,7 +179,6 @@
     line-height: .5em;
     text-align: left;
     height: 75%;
-    overflow: auto;
   }
   
   .journal-container-header {
@@ -180,6 +186,13 @@
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: .5em;
+  }
+
+  .journal-entries-list {
+    height: 90%;
+    width: 100%;
+    padding-right: 1em;
+    overflow: auto;
   }
 
   .add-entry {

@@ -10,7 +10,9 @@ const CalendarEvents = ({ events, openForm }) => {
                     <BsCalendarPlus size={'2em'} onClick={() => openForm()}/>
                 </div>
             </div>
-            {events}
+            <div className='calendar-events-list'>
+                {events}
+            </div>
         </div>
     )
 }
