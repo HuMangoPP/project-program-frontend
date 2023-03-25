@@ -28,8 +28,8 @@ function App() {
   const [queriedRecommendations, setQueriedRecommendations] = useState([])
 
   useEffect(() => {
-    console.log(queriedRecommendations)
-  }, [queriedRecommendations])
+    document.title = 'Pufferfish'
+  }, [])
 
   return (
     <Routes>

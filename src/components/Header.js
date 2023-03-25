@@ -1,11 +1,18 @@
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Header = ({ title, subtitle, link }) => {
+
+    const navigate = useNavigate()
+
     return (
         <div className='webpage-container'>
-            <Link to={link} className='webpage-link'>{title}</Link>
-            <h2 className='webpage-subtitle'>{subtitle}</h2>
+            <div className='webpage-link'>
+                <h1 onClick={() => navigate(link)}>{title}</h1>
+            </div>
+            <div className='webpage-subtitle'>
+                <h2>{subtitle}</h2>
+            </div>
         </div>
     )
 }

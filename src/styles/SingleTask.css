@@ -10,8 +10,11 @@
     text-align: center;
   }
   
-  .single-task-page .webpage-container {
-    top: 10%;
+  .single-task-header {
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-size: 2em;
   }
 
   .calendar-half {

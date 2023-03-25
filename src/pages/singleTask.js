@@ -25,7 +25,9 @@ const SingleTaskPage = ({ task }) => {
                 <OpenedJournal /> : 
                 <ClosedJournal onOpen={() => setJournalOpen(true)} />}
             </div>
-            <Header title='' subtitle='Task' link='' />
+            <div className='single-task-header'>
+                <h1>Task</h1>
+            </div>
         </div> 
     )
 }

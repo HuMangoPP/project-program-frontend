@@ -11,16 +11,12 @@ const Bubbles = () => {
     }
 
     const root = document.documentElement
-    // const bubbleDivs = document.querySelectorAll('.bubble')
-    // console.log(bubbleDivs)
     document.addEventListener('mousemove', evt => {
         let parallaxX = (1 - 2*evt.clientX/window.innerWidth)
         let parallaxY = (1 - 2*evt.clientY/window.innerHeight)
 
         root.style.setProperty('--parallax-x', `${parallaxX}em`)
         root.style.setProperty('--parallax-y', `${parallaxY}em`)
-        // const bubbleDivs = document.querySelectorAll('.bubble')
-        // console.log(bubbleDivs)
     })
 
     return (

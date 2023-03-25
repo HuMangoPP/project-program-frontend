@@ -28,31 +28,30 @@ code {
 
 .webpage-container {
   position: absolute;
-  width: 20%;
+  width: fit-content;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .main-journal .webpage-container {
-  width: 100%;
-  height: 75%;
-}
-
-.recommendations-page .webpage-container {
+  position: absolute;
   top: 15%;
   width: 100%;
-  height: 15%;
-  position: relative;
 }
 
 .webpage-link {
-  display: block;
-  font-size: 7em;
+  font-size: 4em;
   color: white;
-  text-align: center;
   text-decoration: none;
   font-weight: bold;
+  width: fit-content;
 
   background: linear-gradient(
     to right,
@@ -70,24 +69,30 @@ code {
   transition: background-size 400ms;
 }
 
-.webpage-link:hover {
-  background-size: 0 5px, 100% 5px;
-}
-
-.webpage-subtitle {
-  font-size: 4em;
-  color: white;
-  text-align: center;
+.webpage-link h1 {
   line-height: 0;
 }
 
+.webpage-link:hover {
+  background-size: 0 5px, 100% 5px;
+  cursor: pointer;
+}
+
+.webpage-subtitle {
+  font-size: 3em;
+  color: white;
+  line-height: 0;
+  width: fit-content;
+  text-align: center;
+}
+
 .main-journal .webpage-subtitle {
-  font-size: 7em;
+  font-size: 4em;
 }
 
 .recommendations-page .webpage-subtitle {
   margin: 0;
-  font-size: 5em;
+  font-size: 4em;
 }
 
 .bubbles {
