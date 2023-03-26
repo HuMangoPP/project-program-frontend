@@ -154,6 +154,40 @@
     justify-content: space-between;
   }
 
+  .calendar-event-title {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  .calendar-event-title::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: .1em;
+    margin-top: -.15em;
+    left: -5%;
+    background: var(--lightred);
+    
+    transition: width .8s;
+  }
+
+  .calendar-event-title:hover::after {
+    width: 110%;
+  }
+
+  .strikethrough::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 110%;
+    height: .1em;
+    margin-top: -.15em;
+    left: -5%;
+    background: var(--lightred);
+  }
+
   .add-event {
     display: flex;
     flex-direction: column;

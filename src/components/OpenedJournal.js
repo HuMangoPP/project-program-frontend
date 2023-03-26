@@ -3,7 +3,7 @@ import JournalEntry from "./JournalEntry"
 import { useState } from 'react'
 import NewJournalEntry from "./NewJournalEntry"
 
-const OpenedJournal = () => {
+const OpenedJournal = ({ instance }) => {
 
     const [journalForm, setJournalForm] = useState(false)
 
@@ -15,11 +15,20 @@ const OpenedJournal = () => {
             text={`journal entry text ${i}`} />)
     }
 
+    const handleFetchEntries = () => {
+
+        const fetchEntries = async () => {
+            const res = await instance.get()
+
+            console.log(res)
+        }
+    }
+
     return (
         <div className='opened-journal'>
             <div className='journal-top-pad'></div>
             <JournalEntries journalEntries={journalEntries} openForm={() => setJournalForm(!journalForm)}/>
-            {journalForm ? <NewJournalEntry closeForm={() => setJournalForm(!journalForm)}/> : <div />}
+            {journalForm ? <NewJournalEntry closeForm={() => setJournalForm(!journalForm)} instance={instance}/> : <div />}
             <div className='journal-bottom-pad'></div>
         </div>
     )

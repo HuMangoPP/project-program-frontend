@@ -1,5 +1,5 @@
 
-const NewCalendarEvent = ({ closeForm }) => {
+const NewCalendarEvent = ({ closeForm, date, instance }) => {
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -17,11 +17,21 @@ const NewCalendarEvent = ({ closeForm }) => {
 
         if (!endTime) return
 
+        const startUTC = new Date(date.getTime())
+        const splitStart = startTime.split(':')
+        startUTC.setUTCHours(splitStart[0])
+        startUTC.setUTCMinutes(splitStart[1])
+
+        const endUTC = new Date(date.getTime())
+        const splitEnd = endTime.split(':')
+        endUTC.setUTCHours(splitEnd[0])
+        endUTC.setUTCMinutes(splitEnd[1])
+
         console.log({
             title,
             desc,
-            startTime,
-            endTime
+            start: startUTC.toString(),
+            end: endUTC.toString(),
         })
 
         closeForm()

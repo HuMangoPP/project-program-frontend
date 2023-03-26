@@ -16,12 +16,12 @@ const SingleTaskPage = ({ instance, userId }) => {
                         top={90} left={50} size={15} />
             <div className='calendar-half' onClick={() => setJournalOpen(false)}>
             {calendarOpen ? 
-                <OpenedCalendar /> : 
+                <OpenedCalendar instance={instance} /> : 
                 <ClosedCalendar onOpen={() => setCalendarOpen(true)} />}
             </div>
             <div className='journal-half' onClick={() => setCalendarOpen(false)}>
             {journalOpen ? 
-                <OpenedJournal /> : 
+                <OpenedJournal instance={instance} /> : 
                 <ClosedJournal onOpen={() => setJournalOpen(true)} />}
             </div>
             <div className='single-task-header'>
