@@ -1,11 +1,12 @@
 import JournalEntries from "./JournalEntries"
 import JournalEntry from "./JournalEntry"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import NewJournalEntry from "./NewJournalEntry"
 
-const OpenedJournal = ({ instance }) => {
+const OpenedJournal = ({ instance, userId }) => {
 
     const [journalForm, setJournalForm] = useState(false)
+    const [journalData, setJournalData] = useState([])
 
     let numEntires = 6
     let journalEntries = []
@@ -18,11 +19,27 @@ const OpenedJournal = ({ instance }) => {
     const handleFetchEntries = () => {
 
         const fetchEntries = async () => {
-            const res = await instance.get()
+            const res = await instance.get('/getjournal', {
+                params: {
+                    userid: userId,
+                }
+            })
 
-            console.log(res)
+            console.log(res.data)
+            const data = res.data.Date.map((e, i) => {
+                return {
+                    date: e,
+                    entry: res.data.Entry[i],
+                }
+            })
         }
+
+        fetchEntries()
     }
+
+    useEffect(() => {
+        handleFetchEntries()
+    }, [])
 
     return (
         <div className='opened-journal'>

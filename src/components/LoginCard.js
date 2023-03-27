@@ -45,7 +45,7 @@ const LoginCard = ({ instance, setUserId }) => {
                 }
             })
             
-            console.log(res.data.Result)
+            console.log(res.data)
             let performShake = false
             if (res.data.Result === 'Success') {
                 console.log(res.data.UserID)

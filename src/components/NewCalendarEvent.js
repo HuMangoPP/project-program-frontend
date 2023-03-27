@@ -1,38 +1,30 @@
+import CalendarEvent from "./CalendarEvent"
 
-const NewCalendarEvent = ({ closeForm, date, instance }) => {
+const NewCalendarEvent = ({ closeForm, date, instance, userId, fetch }) => {
 
     const handleSubmit = e => {
         e.preventDefault()
 
         const title = document.getElementById('new-calendar-event-title').value
         const desc = document.getElementById('new-calendar-event-desc').value
-        const startTime = document.getElementById('new-calendar-event-start').value
-        const endTime = document.getElementById('new-calendar-event-end').value
 
         if (!title) return
 
-        if (!desc) return
-
-        if (!startTime) return
-
-        if (!endTime) return
-
-        const startUTC = new Date(date.getTime())
-        const splitStart = startTime.split(':')
-        startUTC.setUTCHours(splitStart[0])
-        startUTC.setUTCMinutes(splitStart[1])
-
-        const endUTC = new Date(date.getTime())
-        const splitEnd = endTime.split(':')
-        endUTC.setUTCHours(splitEnd[0])
-        endUTC.setUTCMinutes(splitEnd[1])
-
-        console.log({
-            title,
-            desc,
-            start: startUTC.toString(),
-            end: endUTC.toString(),
+        // should be a post -> then fetch
+        console.log(userId)
+        instance.post('/addreminder', null, {
+            params: {
+                userid: userId,
+                Title: title,
+            }
         })
+        .then(res => {
+            console.log(res)
+        }).catch(err => {
+            console.log(err)
+        })
+
+        fetch()
 
         closeForm()
     }

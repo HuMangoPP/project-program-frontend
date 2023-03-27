@@ -26,7 +26,7 @@ function App() {
   })
 
   const [queriedRecommendations, setQueriedRecommendations] = useState([])
-  const [userId, setUserId] = useState(0)
+  const [userId, setUserId] = useState(5)
 
   useEffect(() => {
     document.title = 'Pufferfish'
