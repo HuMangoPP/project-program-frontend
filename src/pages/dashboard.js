@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import ClosedCalendar from '../components/ClosedCalendar'
-import ClosedJournal from '../components/ClosedJournal'
-import OpenedCalendar from '../components/OpenedCalendar'
-import OpenedJournal from '../components/OpenedJournal'
+import ClosedCalendar from '../components/calendar-components/ClosedCalendar'
+import ClosedJournal from '../components/journal-components/ClosedJournal'
+import OpenedCalendar from '../components/calendar-components/OpenedCalendar'
+import OpenedJournal from '../components/journal-components/OpenedJournal'
 import { useState, useEffect } from 'react'
 import WarpButton from '../components/WarpButton'
 const SingleTaskPage = ({ instance, userId }) => {

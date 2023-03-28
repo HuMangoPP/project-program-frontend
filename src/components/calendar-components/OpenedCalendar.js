@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import Calendar from 'react-calendar'
-import CalendarEvent from "./CalendarEvent"
 import CalendarEvents from "./CalendarEvents"
 import NewCalendarEvent from "./NewCalendarEvent"
 
