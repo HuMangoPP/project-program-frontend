@@ -18,20 +18,19 @@ const OpenedCalendar = ({ instance, userId }) => {
             const res = await instance.get('/getreminders', {
                 params: {
                     userid: userId,
-                    date: date,
+                    date: date.toLocaleDateString(),
                 }
             })
 
-            console.log({
-                id: userId,
-                data: res.data,
-            })
-
-            const events = res.data.ReminderID.map((e, i) => {
+            let events = res.data.ReminderID.map((e, i) => {
                 return {
                     title: res.data.Title[i],
                     dateTime: res.data.Date[i],
                 }
+            })
+
+            events = events.filter((e, i) => {
+                return e.dateTime == date.toLocaleDateString()
             })
 
             setCalendarEvents(events)
