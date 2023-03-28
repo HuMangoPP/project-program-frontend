@@ -1,31 +1,5 @@
 
-const NewCalendarEvent = ({ closeForm, date, instance, userId, fetch }) => {
-
-    const handleSubmit = e => {
-        e.preventDefault()
-
-        const title = document.getElementById('new-calendar-event-title').value
-
-        if (!title) return
-
-        // should be a post -> then fetch
-        instance.post('/addreminder', null, {
-            params: {
-                userid: userId,
-                Title: title,
-                date: date.toLocaleDateString(),
-            }
-        })
-        .then(res => {
-            console.log(res)
-        }).catch(err => {
-            console.log(err)
-        })
-
-        fetch()
-
-        closeForm()
-    }
+const NewCalendarEvent = ({ closeForm, handleSubmit }) => {
 
     return (
         <div className='new-calendar-event'>

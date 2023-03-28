@@ -7,7 +7,8 @@ const JournalEntries = ({ journalData }) => {
         console.log(journalData[i].habits)
         return <JournalEntry date={journalData[i].date}
                              text={journalData[i].entry}
-                             habits={journalData[i].habits} />
+                             habits={journalData[i].habits}
+                             journalId={journalData[i].journalId} />
     })
 
     return (

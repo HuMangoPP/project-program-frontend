@@ -1,15 +1,14 @@
 import { BsCalendarPlus } from 'react-icons/bs'
 import CalendarEvent from './CalendarEvent'
 
-const CalendarEvents = ({ eventData, openForm }) => {
+const CalendarEvents = ({ eventData, openForm, handleDelete }) => {
 
-    let events = []
-    for (let i=0; i<eventData.length; i++) {
-        events.push(
-            <CalendarEvent title={eventData[i].title}
-                           dateTime={eventData[i].dateTime} />
-        )
-    }
+    const events = eventData.map((e, i) => {
+        return <CalendarEvent reminder={eventData[i].title}
+                            dateTime={eventData[i].dateTime}
+                            reminderId={eventData[i].reminderId} 
+                            handleDelete={handleDelete} />
+    })
 
     return (
         <div className='calendar-events-container'>

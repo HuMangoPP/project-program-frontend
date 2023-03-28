@@ -1,6 +1,6 @@
 import HabitRibbon from './HabitRibbon'
 
-const JournalEntry = ({ date, text, habits }) => {
+const JournalEntry = ({ date, text, habits, journalId }) => {
 
     const habitRibbons = Array.from({length: habits.length}, (e, i) => {
         return <HabitRibbon 

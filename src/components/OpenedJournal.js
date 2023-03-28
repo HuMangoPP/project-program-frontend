@@ -14,7 +14,6 @@ const OpenedJournal = ({ instance, userId }) => {
                     userid: userId,
                 }
             })
-
             const data = res.data.Date.map((e, i) => {
                 return {
                     date: e,
@@ -25,7 +24,8 @@ const OpenedJournal = ({ instance, userId }) => {
                         res.data.Habit3[i],
                         res.data.Habit4[i],
                         res.data.Habit5[i],
-                    ]
+                    ],
+                    journalId: res.data.JournalID[i],
                 }
             })
 

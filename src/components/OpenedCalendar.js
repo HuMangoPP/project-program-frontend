@@ -12,7 +12,7 @@ const OpenedCalendar = ({ instance, userId }) => {
 
     const [date, setDate] = useState(new Date())
 
-    const handleFetchEvents = () => {
+    const handleGetEvents = () => {
 
         const fetchEvents = async () => {
             const res = await instance.get('/getreminders', {
@@ -21,11 +21,12 @@ const OpenedCalendar = ({ instance, userId }) => {
                     date: date.toLocaleDateString(),
                 }
             })
-
+            
             let events = res.data.ReminderID.map((e, i) => {
                 return {
                     title: res.data.Title[i],
                     dateTime: res.data.Date[i],
+                    reminderId: e,
                 }
             })
 
@@ -39,8 +40,48 @@ const OpenedCalendar = ({ instance, userId }) => {
         fetchEvents()
     }
 
+    const handlePostEvents = () => {
+            
+        const title = document.getElementById('new-calendar-event-title').value
+        if (!title) return
+
+        const postEvent = async () => {
+            const res = await instance.get('/addreminder', {
+                params: {
+                    userid: userId,
+                    Title: title,
+                    date: date.toLocaleDateString(),
+                }
+            })
+            console.log(res)
+    
+            handleGetEvents()
+    
+            setCalendarForm(!calendarForm)
+        }
+
+        postEvent()
+    }
+
+    const handleDeleteEvents = ({ reminderId }) => {
+        const deleteEvents = async () => {
+            const res = await instance.get('/deletereminder', {
+                params: {
+                    userid: `${userId}`,
+                    reminderid: `${reminderId}`,
+                }
+            })
+
+            console.log(res)
+        }
+
+        deleteEvents()
+        
+        handleGetEvents()
+    }
+
     useEffect(() => {
-        handleFetchEvents()
+        handleGetEvents()
     }, [date])
 
     return (
@@ -48,12 +89,10 @@ const OpenedCalendar = ({ instance, userId }) => {
             <div className='calendar-container'>
                 <Calendar onChange={setDate} value={date} />
             </div>
-            <CalendarEvents eventData={calendarEvents} openForm={() => setCalendarForm(!calendarForm)}/>
-            {calendarForm ? <NewCalendarEvent closeForm={() => setCalendarForm(!calendarForm)} 
-                                              instance={instance} 
-                                              fetch={handleFetchEvents}
-                                              userId={userId}
-                                              date={date} /> : <div />}
+            <CalendarEvents eventData={calendarEvents} openForm={() => setCalendarForm(true)}
+                            handleDelete={handleDeleteEvents}/>
+            {calendarForm ? <NewCalendarEvent   closeForm={() => setCalendarForm(false)}
+                                                handleSubmit={handlePostEvents} /> : <div />}
         </div>
     )
 }

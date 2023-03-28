@@ -146,47 +146,36 @@
     padding: 1em 1.5em;
     margin: 1em 0;
     border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
   }
-  
+
   .calendar-event-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
+  
+  .calendar-event-text {
+    width: 100%;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    height: auto;
+    overflow: hidden;
 
-  .calendar-event-title {
-    position: relative;
-    display: block;
+    text-decoration: line-through;
+    text-decoration-color: transparent;
+    transition: text-decoration-color .5s;
+  }
+
+  .calendar-event-text p {
+    margin-block: 0;
+  }
+
+  .calendar-event-text:hover {
+    text-decoration-color: var(--lightred);
     cursor: pointer;
-    line-height: 1.5em;
-  }
-
-  .calendar-event-title::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: .1em;
-    margin-top: -.75em;
-    left: -5%;
-    background: var(--lightred);
-    
-    transition: width .8s;
-  }
-
-  .calendar-event-title:hover::after {
-    width: 110%;
-  }
-
-  .strikethrough::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 110%;
-    height: .1em;
-    margin-top: -.75em;
-    left: -5%;
-    background: var(--lightred);
   }
 
   .add-event {
