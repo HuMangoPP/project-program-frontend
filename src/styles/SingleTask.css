@@ -428,3 +428,58 @@
     border-bottom: .25em solid black;
     font-size: 1.5em;
   }
+
+  .habit-collection { 
+    width: 100%;
+    height: 16em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: width .5s, height .5s;
+  }
+
+  .habit-ribbon {
+    width: fit-content;
+    height: 3em;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+
+    transform-origin: center left;
+    transition: transform 1s
+  }
+
+  .habit-ribbon:hover {
+    cursor: pointer;
+    transform: scale(1.5, 1.25);
+  }
+
+  .habit-ribbon-textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .habit-ribbon-text {
+    padding-inline: .5em;
+    vertical-align: middle;
+    
+    transform-origin: center left;
+    transition: transform 1s;
+  }
+
+  .habit-ribbon:hover .habit-ribbon-text {
+    transform: scale(.67, .8);
+  }
+
+  .habit-ribbon-triangles {
+    width: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ribbon-top, .ribbon-bottom {
+    width: 100%;
+    height: 50%;
+  }
