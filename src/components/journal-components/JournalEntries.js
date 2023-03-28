@@ -1,14 +1,15 @@
 import { BsJournalPlus } from 'react-icons/bs'
 import JournalEntry from './JournalEntry'
 
-const JournalEntries = ({ journalData }) => {
+const JournalEntries = ({ journalData, handleDelete }) => {
 
     let journalEntries = Array.from({length: journalData.length}, (e, i) => {
         console.log(journalData[i].habits)
         return <JournalEntry date={journalData[i].date}
                              text={journalData[i].entry}
                              habits={journalData[i].habits}
-                             journalId={journalData[i].journalId} />
+                             journalId={journalData[i].journalId}
+                             handleDelete={handleDelete} />
     })
 
     return (

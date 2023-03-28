@@ -13,7 +13,7 @@ const OpenedCalendar = ({ instance, userId }) => {
 
     const handleGetEvents = () => {
 
-        const fetchEvents = async () => {
+        const getEvents = async () => {
             const res = await instance.get('/getreminders', {
                 params: {
                     userid: userId,
@@ -36,7 +36,7 @@ const OpenedCalendar = ({ instance, userId }) => {
             setCalendarEvents(events)
         }
 
-        fetchEvents()
+        getEvents()
     }
 
     const handlePostEvents = () => {
@@ -75,7 +75,6 @@ const OpenedCalendar = ({ instance, userId }) => {
         }
 
         deleteEvents()
-        
         handleGetEvents()
     }
 

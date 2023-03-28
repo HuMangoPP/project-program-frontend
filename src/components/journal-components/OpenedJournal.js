@@ -6,9 +6,9 @@ const OpenedJournal = ({ instance, userId }) => {
 
     const [journalData, setJournalData] = useState([])
 
-    const handleFetchEntries = () => {
+    const handleGetEntries = () => {
 
-        const fetchEntries = async () => {
+        const getEntries = async () => {
             const res = await instance.get('/getjournal', {
                 params: {
                     userid: userId,
@@ -33,17 +33,33 @@ const OpenedJournal = ({ instance, userId }) => {
             console.log(journalData)
         }
 
-        fetchEntries()
+        getEntries()
+    }
+
+    const handleDeleteEntries = ({ journalId }) => {
+        const deleteEntries = async () => {
+            const res = await instance.get('/deletejournal', {
+                params: {
+                    userid: userId,
+                    journalid: journalId,
+                }
+            })
+
+            console.log(res)
+        }
+
+        deleteEntries()
+        handleGetEntries()
     }
 
     useEffect(() => {
-        handleFetchEntries()
+        handleGetEntries()
     }, [])
 
     return (
         <div className='opened-journal'>
             <div className='journal-top-pad'></div>
-            <JournalEntries journalData={journalData} />
+            <JournalEntries journalData={journalData} handleDelete={handleDeleteEntries} />
             <div className='journal-bottom-pad'></div>
         </div>
     )

@@ -3,7 +3,7 @@ import './App.css';
 import 'react-calendar/dist/Calendar.css'
 import './styles/Calendar.css'
 import './styles/Login.css'
-import './styles/SingleTask.css'
+import './styles/Dashboard.css'
 import './styles/TaskCollection.css'
 import './styles/Recommendations.css'
 import './styles/MainJournal.css'

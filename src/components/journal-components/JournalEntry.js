@@ -1,6 +1,6 @@
 import HabitRibbon from './HabitRibbon'
 
-const JournalEntry = ({ date, text, habits, journalId }) => {
+const JournalEntry = ({ date, text, habits, journalId, handleDelete }) => {
 
     const habitRibbons = Array.from({length: habits.length}, (e, i) => {
         return <HabitRibbon 
@@ -12,7 +12,9 @@ const JournalEntry = ({ date, text, habits, journalId }) => {
     return (
         <div className='journal-entry-card'>
             <h1>{date}</h1>
-            <p>{text}</p>
+            <div className='journal-entry-text' onClick={() => handleDelete({journalId})}>
+                <p>{text}</p>
+            </div>
             <h2>Recommendations</h2>
             <div className='habit-collection'>
                 {habitRibbons}

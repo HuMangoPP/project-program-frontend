@@ -239,8 +239,17 @@
     padding-bottom: .5em;
   }
 
-  .journal-entry-card p {
+  .journal-entry-text {
     line-height: 2em;
+    text-decoration: line-through;
+    text-decoration-color: transparent;
+
+    transition: text-decoration-color .5s;
+  }
+
+  .journal-entry-text:hover {
+    text-decoration-color: var(--lightred);
+    cursor: pointer;
   }
   
   ::-webkit-scrollbar {
