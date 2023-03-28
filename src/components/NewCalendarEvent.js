@@ -1,4 +1,3 @@
-import CalendarEvent from "./CalendarEvent"
 
 const NewCalendarEvent = ({ closeForm, date, instance, userId, fetch }) => {
 
@@ -6,16 +5,15 @@ const NewCalendarEvent = ({ closeForm, date, instance, userId, fetch }) => {
         e.preventDefault()
 
         const title = document.getElementById('new-calendar-event-title').value
-        const desc = document.getElementById('new-calendar-event-desc').value
 
         if (!title) return
 
         // should be a post -> then fetch
-        console.log(userId)
         instance.post('/addreminder', null, {
             params: {
                 userid: userId,
                 Title: title,
+                date: date.toLocaleDateString(),
             }
         })
         .then(res => {
@@ -31,14 +29,14 @@ const NewCalendarEvent = ({ closeForm, date, instance, userId, fetch }) => {
 
     return (
         <div className='new-calendar-event'>
-            <h1>New Event</h1>
+            <h1>New Reminder</h1>
             <div className='new-calendar-form-title'>
-                <label>Event Title</label>
+                <label>Reminder</label>
                 <input type='text' 
                        className='new-calendar-event-title'
                        id='new-calendar-event-title'></input>
             </div>
-            <div className='new-calendar-form-desc'>
+            {/* <div className='new-calendar-form-desc'>
                 <label>Event Description</label>
                 <textarea type='text' 
                           className='new-calendar-event-desc'
@@ -57,7 +55,7 @@ const NewCalendarEvent = ({ closeForm, date, instance, userId, fetch }) => {
                         <input type='time' id='new-calendar-event-end'></input>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className='btn-container'>
                 <button className='submit-btn' onClick={handleSubmit}>New Event</button>
                 <button className='submit-btn' onClick={() => closeForm()}>Close</button>

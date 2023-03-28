@@ -3,7 +3,7 @@ import WarpButton from "./WarpButton"
 
 const TaskCollection = () => {
 
-    const numCards = 12
+    const numCards = 5
     const colors = Array.from({length: numCards}, () => `hsl(${Math.floor(Math.random()*360)}, ${100}%, ${75}%)`)
 
     let taskCards = []

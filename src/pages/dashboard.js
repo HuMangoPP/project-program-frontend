@@ -3,7 +3,7 @@ import ClosedCalendar from '../components/ClosedCalendar'
 import ClosedJournal from '../components/ClosedJournal'
 import OpenedCalendar from '../components/OpenedCalendar'
 import OpenedJournal from '../components/OpenedJournal'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import WarpButton from '../components/WarpButton'
 const SingleTaskPage = ({ instance, userId }) => {
 
@@ -12,7 +12,7 @@ const SingleTaskPage = ({ instance, userId }) => {
 
     return (
         <div className='single-task-page' >
-            <WarpButton link='/tasks' text='Return to Tasks' 
+            <WarpButton link='/journal' text='Return to Journal' 
                         top={90} left={50} size={15} />
             <div className='calendar-half' onClick={() => setJournalOpen(false)}>
             {calendarOpen ? 
@@ -25,7 +25,7 @@ const SingleTaskPage = ({ instance, userId }) => {
                 <ClosedJournal onOpen={() => setJournalOpen(true)} />}
             </div>
             <div className='single-task-header'>
-                <h1>Task</h1>
+                <h1>Dashboard</h1>
             </div>
         </div> 
     )

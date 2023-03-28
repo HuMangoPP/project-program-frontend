@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const CalendarEvent = ({ dateTime, title, text }) => {
+const CalendarEvent = ({ dateTime, title }) => {
 
     const [strikethrough, setStrikethrough] = useState(false)
 
@@ -10,9 +10,6 @@ const CalendarEvent = ({ dateTime, title, text }) => {
                 <h1 onClick={() => setStrikethrough(!strikethrough)}
                     className={`calendar-event-title ${strikethrough ? 'strikethrough' : ''}`}>{title}</h1>
                 <p>{dateTime}</p>
-            </div>
-            <div className='calendar-event-text'>
-                <p>{text}</p>
             </div>
         </div>
     )

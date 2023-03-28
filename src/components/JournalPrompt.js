@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
 
-const JournalPrompt = ({ instance, setRecommendations }) => {
+const JournalPrompt = ({ instance, setRecommendations, userId }) => {
 
     const navigate = useNavigate()
 
@@ -16,7 +16,7 @@ const JournalPrompt = ({ instance, setRecommendations }) => {
         const makeQuery = async () => {
             const res = await instance.get('/recommend', {
                 params: {
-                    userid: 0,
+                    userid: userId,
                     input: query,
                 }
             })

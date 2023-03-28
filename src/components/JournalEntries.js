@@ -1,12 +1,21 @@
 import { BsJournalPlus } from 'react-icons/bs'
+import JournalEntry from './JournalEntry'
 
-const JournalEntries = ({ journalEntries, openForm }) => {
+const JournalEntries = ({ journalData }) => {
+
+    let journalEntries = Array.from({length: journalData.length}, (e, i) => {
+        console.log(journalData[i].habits)
+        return <JournalEntry date={journalData[i].date}
+                             text={journalData[i].entry}
+                             habits={journalData[i].habits} />
+    })
+
     return (
         <div className='journal-entries-container'>
             <div className='journal-container-header'>
                 <h1>Journal Entries</h1>
                 <div className='add-entry'>
-                    <BsJournalPlus size={'2em'} onClick={() => openForm()}/>
+                    <BsJournalPlus size={'2em'} />
                 </div>
             </div>
             <div className='journal-entries-list'>

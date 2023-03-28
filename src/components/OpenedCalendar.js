@@ -10,12 +10,15 @@ const OpenedCalendar = ({ instance, userId }) => {
 
     const [calendarEvents, setCalendarEvents] = useState([])
 
+    const [date, setDate] = useState(new Date())
+
     const handleFetchEvents = () => {
 
         const fetchEvents = async () => {
             const res = await instance.get('/getreminders', {
                 params: {
-                    userid: userId
+                    userid: userId,
+                    date: date,
                 }
             })
 
@@ -27,12 +30,11 @@ const OpenedCalendar = ({ instance, userId }) => {
             const events = res.data.ReminderID.map((e, i) => {
                 return {
                     title: res.data.Title[i],
-                    dateTime: date,
+                    dateTime: res.data.Date[i],
                 }
             })
 
             setCalendarEvents(events)
-            
         }
 
         fetchEvents()
@@ -40,9 +42,7 @@ const OpenedCalendar = ({ instance, userId }) => {
 
     useEffect(() => {
         handleFetchEvents()
-    }, [])
-
-    const [date, setDate] = useState(new Date())
+    }, [date])
 
     return (
         <div className='opened-calendar'>
@@ -53,7 +53,8 @@ const OpenedCalendar = ({ instance, userId }) => {
             {calendarForm ? <NewCalendarEvent closeForm={() => setCalendarForm(!calendarForm)} 
                                               instance={instance} 
                                               fetch={handleFetchEvents}
-                                              userId={userId} /> : <div />}
+                                              userId={userId}
+                                              date={date} /> : <div />}
         </div>
     )
 }

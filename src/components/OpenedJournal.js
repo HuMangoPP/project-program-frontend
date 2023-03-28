@@ -1,20 +1,10 @@
 import JournalEntries from "./JournalEntries"
-import JournalEntry from "./JournalEntry"
 import { useState, useEffect } from 'react'
 import NewJournalEntry from "./NewJournalEntry"
 
 const OpenedJournal = ({ instance, userId }) => {
 
-    const [journalForm, setJournalForm] = useState(false)
     const [journalData, setJournalData] = useState([])
-
-    let numEntires = 6
-    let journalEntries = []
-    for (let i=0; i<numEntires; i++) {
-        journalEntries.push(<JournalEntry 
-            date={`some date ${i}`}
-            text={`journal entry text ${i}`} />)
-    }
 
     const handleFetchEntries = () => {
 
@@ -25,13 +15,22 @@ const OpenedJournal = ({ instance, userId }) => {
                 }
             })
 
-            console.log(res.data)
             const data = res.data.Date.map((e, i) => {
                 return {
                     date: e,
                     entry: res.data.Entry[i],
+                    habits: [
+                        res.data.Habit1[i], 
+                        res.data.Habit2[i],
+                        res.data.Habit3[i],
+                        res.data.Habit4[i],
+                        res.data.Habit5[i],
+                    ]
                 }
             })
+
+            setJournalData(data)
+            console.log(journalData)
         }
 
         fetchEntries()
@@ -44,8 +43,7 @@ const OpenedJournal = ({ instance, userId }) => {
     return (
         <div className='opened-journal'>
             <div className='journal-top-pad'></div>
-            <JournalEntries journalEntries={journalEntries} openForm={() => setJournalForm(!journalForm)}/>
-            {journalForm ? <NewJournalEntry closeForm={() => setJournalForm(!journalForm)} instance={instance}/> : <div />}
+            <JournalEntries journalData={journalData} />
             <div className='journal-bottom-pad'></div>
         </div>
     )

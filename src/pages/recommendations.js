@@ -10,7 +10,7 @@ const Recommendations = ({ recommendations }) => {
             <div className='recommendations-header'>
                 <h1>Here are some Recommendations. Do you see anything interesting?</h1>
             </div>
-            <WarpButton link='/tasks' top={10} left={95} text='Jump to Tasks' />
+            <WarpButton link='/dashboard' top={10} left={95} text='Jump to Dashboard' />
             <CardCarousel recommendations={recommendations} />
         </div>
     )

@@ -5,17 +5,16 @@ const CalendarEvents = ({ eventData, openForm }) => {
 
     let events = []
     for (let i=0; i<eventData.length; i++) {
-        let date = eventData[i].dateTime.toLocaleDateString()
         events.push(
             <CalendarEvent title={eventData[i].title}
-                           dateTime={date} />
+                           dateTime={eventData[i].dateTime} />
         )
     }
 
     return (
         <div className='calendar-events-container'>
             <div className='calendar-events-header'>
-                <h1>Events</h1>
+                <h1>Reminders</h1>
                 <div  className='add-event'>
                     <BsCalendarPlus size={'2em'} onClick={() => openForm()}/>
                 </div>
