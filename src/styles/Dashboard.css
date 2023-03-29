@@ -271,7 +271,7 @@
     top: 50%;
     left: 50%;
     width: 50%;
-    height: 25%;
+    height: fit-content;
     transform: translate(-50%, -50%);
     background-color: white;
     box-shadow: 1em 1em var(--discordblue), -1em -1em var(--discordlightgrey);
@@ -293,6 +293,7 @@
     flex-direction: column;
     text-align: left;
     font-size: 1.25em;
+    margin-block: .5em;
   }
 
   .new-calendar-event-title {
@@ -301,59 +302,8 @@
     border: 1px solid black;
     border-bottom: .3em solid black;
     font-size: 1em;
-  }
-
-  .new-calendar-form-desc {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-block: 1em;
-    font-size: 1.25em;
-  }
-
-  .new-calendar-event-desc {
-    position: relative;
-    height: 15%;
+    height: 5em;
     resize: none;
-    padding: .5em;
-    padding-inline: .75em;
-    border: 1px solid black;
-    border-bottom: .4em solid black;
-    font-size: 1em;
-  }
-
-  .new-calendar-form-time {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-block: 1em;
-    font-size: 1.25em;
-  }
-
-  .new-calendar-form-start {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .new-calendar-form-end {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-  }
-
-  .new-calendar-event-start input[type="time"] {
-    font-size: 1.5em;
-    padding: .25em;
-    border: 1px solid black;
-    border-bottom: .25em solid black;
-  }
-
-  .new-calendar-event-end input[type="time"] {
-    font-size: 1.5em;
-    padding: .25em;
-    border: 1px solid black;
-    border-bottom: .25em solid black;
   }
 
   .submit-btn {

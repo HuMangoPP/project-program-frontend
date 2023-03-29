@@ -114,6 +114,8 @@ code {
     var(--parallax-x, 0),
     var(--parallax-y, 0)
   );
+
+  transition: transform .75s cubic-bezier(0.1, 0.7, 1.0, 0.1);
 }
 
 .warp-btn {

@@ -6,9 +6,9 @@ const NewCalendarEvent = ({ closeForm, handleSubmit }) => {
             <h1>New Reminder</h1>
             <div className='new-calendar-form-title'>
                 <label>Reminder</label>
-                <input type='text' 
+                <textarea type='text' 
                        className='new-calendar-event-title'
-                       id='new-calendar-event-title'></input>
+                       id='new-calendar-event-title'></textarea>
             </div>
             {/* <div className='new-calendar-form-desc'>
                 <label>Event Description</label>

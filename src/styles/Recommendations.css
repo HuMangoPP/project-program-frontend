@@ -54,9 +54,8 @@
 
   .recommendation-card .recommendation-title {
     min-height: 25%;
-    max-height: 25%;
-    height: fit-content;
-    transition: max-height .9s;
+    height: 25%;
+    transition: height .9s;
   }
   
   .recommendation-card:hover {
@@ -66,7 +65,7 @@
   }
 
   .recommendation-card:hover .recommendation-title {
-    max-height: 100%;
+    height: 50%;
   }
 
   .recommendation-card-load-in {
@@ -75,16 +74,24 @@
   }
   
   .recommendation-title {
-    background-color: var(--darkdarkblue);
+    background-color: var(--darkblue);
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     color: white;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    display: flex;
+    flex-direction: column;
   }
 
   .recommendation-title h1 {
-    padding: 1em;
+    padding-inline: .5em;
+  }
+
+  .recommendation-title h1 span {
+    background-color: var(--darkdarkblue); 
+    opacity: .5;
   }
   
   .recommendation-text {
@@ -96,10 +103,11 @@
     text-align: left;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
+    overflow: auto;
   }
 
   .recommendation-link {
-    float: right;
+    text-align: right;
     color: white;
     padding: .5em;
   }

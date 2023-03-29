@@ -31,6 +31,8 @@ const JournalPrompt = ({ instance, setRecommendations, userId }) => {
                 }
             })
 
+            console.log(recommendations)
+
             setRecommendations(recommendations)
         }
 

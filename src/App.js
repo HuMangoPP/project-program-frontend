@@ -27,13 +27,10 @@ function App() {
 
   const [queriedRecommendations, setQueriedRecommendations] = useState([])
   const [userId, setUserId] = useState(5)
-  const [habits, setHabits] = useState([])
 
   useEffect(() => {
-    let hostname = `${window.location.origin}/`
-    let site = document.URL.replace(hostname, '')
-    document.title = `Pufferfish ${site}`
-  }, [0])
+    document.title = `Pufferfish ${webpageTitle}`
+  }, [webpageTitle])
 
   return (
     <Routes>

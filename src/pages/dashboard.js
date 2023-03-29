@@ -5,6 +5,7 @@ import OpenedCalendar from '../components/calendar-components/OpenedCalendar'
 import OpenedJournal from '../components/journal-components/OpenedJournal'
 import { useState, useEffect } from 'react'
 import WarpButton from '../components/WarpButton'
+import Bubbles from '../components/Bubbles'
 const SingleTaskPage = ({ instance, userId }) => {
 
     const [journalOpen, setJournalOpen] = useState(false)
@@ -12,6 +13,7 @@ const SingleTaskPage = ({ instance, userId }) => {
 
     return (
         <div className='single-task-page' >
+            <Bubbles />
             <WarpButton link='/journal' text='Return to Journal' 
                         top={90} left={50} size={15} />
             <div className='calendar-half' onClick={() => setJournalOpen(false)}>

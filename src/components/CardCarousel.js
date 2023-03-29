@@ -9,7 +9,8 @@ const CardCarousel = ({ recommendations }) => {
         cards.push(
             <RecommendationCard title={recommendations[i].habit} 
                                 desc={recommendations[i].desc} 
-                                link={recommendations[i].link} />
+                                link={recommendations[i].link} 
+                                image={recommendations[i].image} />
         )
     }
 
