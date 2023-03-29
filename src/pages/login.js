@@ -1,11 +1,11 @@
 import Bubbles from "../components/Bubbles"
 import LoginCard from "../components/LoginCard"
 
-const Login = ({ instance, setUserId }) => {
+const Login = ({ instance, setUserId, setNotifState }) => {
     return (
         <div>
             <Bubbles />
-            <LoginCard instance={instance} setUserId={setUserId} />
+            <LoginCard instance={instance} setUserId={setUserId} setNotifState={setNotifState} />
         </div>
     )
 }

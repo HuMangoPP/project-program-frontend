@@ -5,7 +5,8 @@ const JournalEntries = ({ journalData, handleDelete }) => {
 
     let journalEntries = Array.from({length: journalData.length}, (e, i) => {
         console.log(journalData[i].habits)
-        return <JournalEntry date={journalData[i].date}
+        return <JournalEntry key={`journal-entry-${i}`}
+                             date={journalData[i].date}
                              text={journalData[i].entry}
                              habits={journalData[i].habits}
                              journalId={journalData[i].journalId}

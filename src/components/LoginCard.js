@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const LoginCard = ({ instance, setUserId }) => {
+const LoginCard = ({ instance, setUserId, setNotifState }) => {
 
     
     const navigate = useNavigate()
@@ -50,6 +50,7 @@ const LoginCard = ({ instance, setUserId }) => {
             if (res.data.Result === 'Success') {
                 console.log(res.data.UserID)
                 setUserId(res.data.UserID)
+                setNotifState(res.data.notifications)
                 setWarningMsg('')
                 navigate('/journal')
             } else if (res.data.Result === 'Invalid Code') {

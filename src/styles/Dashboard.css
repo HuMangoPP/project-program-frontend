@@ -159,8 +159,8 @@
   
   .calendar-event-text {
     width: 100%;
-    font-size: 1.25em;
-    line-height: 1.25em;
+    font-size: 1.35em;
+    line-height: 1.35em;
     height: auto;
     overflow: hidden;
 
@@ -187,10 +187,10 @@
   .notif-switch {
     cursor: pointer;
     text-indent: -9999px;
-    width: 4em;
-    height: 2em;
-    margin-top: .6em;
-    margin-right: .5em;
+    width: 4.5em;
+    height: 2.5em;
+    margin-top: .25em;
+    margin-right: 1em;
     background: var(--lightbluegrey);
     display: block;
     border-radius: 3em;
@@ -200,8 +200,8 @@
   .notif-switch::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: .25em;
+    left: .25em;
     width: 2em;
     height: 2em;
     background: var(--darkdarkblue);
@@ -210,11 +210,11 @@
   }
 
   .slider:checked + .notif-switch {
-    background: var(--discordblue);
+    background: var(--darkblue);
   }
 
   .slider:checked + .notif-switch::after {
-    left: calc(100%);
+    left: calc(100% - .25em);
 	  transform: translateX(-100%);
   }
 
@@ -233,6 +233,7 @@
 
   .add-event:hover {
     background-color: var(--lightblue);
+    cursor: pointer;
   }
   
   .journal-top-pad {

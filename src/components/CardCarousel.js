@@ -7,7 +7,8 @@ const CardCarousel = ({ recommendations }) => {
     let cards = []
     for (let i=0; i<numCards; i++) {
         cards.push(
-            <RecommendationCard title={recommendations[i].habit} 
+            <RecommendationCard key={`recommendation-${i}`}
+                                title={recommendations[i].habit} 
                                 desc={recommendations[i].desc} 
                                 link={recommendations[i].link} 
                                 image={recommendations[i].image} />

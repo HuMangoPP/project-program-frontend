@@ -27,6 +27,7 @@ function App() {
 
   const [queriedRecommendations, setQueriedRecommendations] = useState([])
   const [userId, setUserId] = useState(-1)
+  const [notifState, setNotifState] = useState(false)
 
   useEffect(() => {
     document.title = `Pufferfish`
@@ -35,10 +36,11 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/login' element={<Login instance={instance} setUserId={setUserId} />} />
+      <Route path='/login' element={<Login instance={instance} setUserId={setUserId} setNotifState={setNotifState} />} />
       <Route path='/journal' element={<MainJournal instance={instance} setRecommendations={setQueriedRecommendations} userId={userId} />} />
       <Route path='/recommendations' element={<Recommendations recommendations={queriedRecommendations} userId={userId} />} />
-      <Route path='/dashboard'  element={<SingleTaskPage userId={userId} instance={instance} />} />
+      <Route path='/dashboard'  element={<SingleTaskPage userId={userId} instance={instance} 
+                                setNotifState={setNotifState} notifState={notifState} />} />
       <Route path='/habit' element={<TasksPage userid={userId} instance={instance} />} />
     </Routes>
   )

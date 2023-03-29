@@ -8,7 +8,7 @@ import WarpButton from '../components/WarpButton'
 import Bubbles from '../components/Bubbles'
 import { useNavigate } from 'react-router-dom'
 
-const SingleTaskPage = ({ instance, userId }) => {
+const SingleTaskPage = ({ instance, userId, setNotifState, notifState }) => {
 
     const [journalOpen, setJournalOpen] = useState(false)
     const [calendarOpen, setCalendarOpen] = useState(false)
@@ -25,7 +25,8 @@ const SingleTaskPage = ({ instance, userId }) => {
                         top={90} left={50} size={15} />
             <div className='calendar-half' onClick={() => setJournalOpen(false)}>
             {calendarOpen ? 
-                <OpenedCalendar instance={instance} userId={userId} /> : 
+                <OpenedCalendar instance={instance} userId={userId} 
+                                setNotifState={setNotifState} notifState={notifState} /> : 
                 <ClosedCalendar onOpen={() => setCalendarOpen(true)} />}
             </div>
             <div className='journal-half' onClick={() => setCalendarOpen(false)}>

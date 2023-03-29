@@ -3,7 +3,7 @@ import Calendar from 'react-calendar'
 import CalendarEvents from "./CalendarEvents"
 import NewCalendarEvent from "./NewCalendarEvent"
 
-const OpenedCalendar = ({ instance, userId }) => {
+const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
 
     const [calendarForm, setCalendarForm] = useState(false)
 
@@ -66,8 +66,8 @@ const OpenedCalendar = ({ instance, userId }) => {
         const deleteEvents = async () => {
             const res = await instance.get('/deletereminder', {
                 params: {
-                    userid: `${userId}`,
-                    reminderid: `${reminderId}`,
+                    userid: userId,
+                    reminderid: reminderId,
                 }
             })
 
@@ -76,6 +76,25 @@ const OpenedCalendar = ({ instance, userId }) => {
 
         deleteEvents()
         handleGetEvents()
+    }
+
+    const handleNotifToggle = () => {
+        setNotifState(!notifState)
+        const toggleNotif = async () => {
+            const res = await instance.get('/togglenotifications', {
+                params: {
+                    userid: userId,
+                    notifications: !notifState,
+                }
+            })
+
+            console.log({
+                state: !notifState,
+                res: res,
+            })
+        }
+
+        toggleNotif()
     }
 
     useEffect(() => {
@@ -88,7 +107,9 @@ const OpenedCalendar = ({ instance, userId }) => {
                 <Calendar onChange={setDate} value={date} />
             </div>
             <CalendarEvents eventData={calendarEvents} openForm={() => setCalendarForm(true)}
-                            handleDelete={handleDeleteEvents}/>
+                            handleDelete={handleDeleteEvents} 
+                            handleToggle={handleNotifToggle}
+                            notifState={notifState} />
             {calendarForm ? <NewCalendarEvent   closeForm={() => setCalendarForm(false)}
                                                 handleSubmit={handlePostEvents} /> : <div />}
         </div>
