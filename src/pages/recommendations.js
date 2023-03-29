@@ -2,8 +2,16 @@
 import Bubbles from "../components/Bubbles";
 import CardCarousel from "../components/CardCarousel"
 import WarpButton from "../components/WarpButton";
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
-const Recommendations = ({ recommendations }) => {
+const Recommendations = ({ recommendations, userId }) => {
+
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (userId == -1) navigate('/')
+    }, [0])
+
     return (
         <div className='recommendations-page'>
             <Bubbles />

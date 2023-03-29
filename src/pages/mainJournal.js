@@ -2,8 +2,15 @@ import Header from '../components/Header'
 import JournalPrompt from '../components/JournalPrompt'
 import Bubbles from '../components/Bubbles'
 import WarpButton from '../components/WarpButton'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const MainJournal = ({ instance, setRecommendations, userId }) => {
+
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (userId == -1) navigate('/')
+    }, [0])
 
     return (
         <div className='main-journal'>

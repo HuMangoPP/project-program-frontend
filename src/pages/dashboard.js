@@ -6,10 +6,17 @@ import OpenedJournal from '../components/journal-components/OpenedJournal'
 import { useState, useEffect } from 'react'
 import WarpButton from '../components/WarpButton'
 import Bubbles from '../components/Bubbles'
+import { useNavigate } from 'react-router-dom'
+
 const SingleTaskPage = ({ instance, userId }) => {
 
     const [journalOpen, setJournalOpen] = useState(false)
     const [calendarOpen, setCalendarOpen] = useState(false)
+
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (userId == -1) navigate('/')
+    }, [0])
 
     return (
         <div className='single-task-page' >
