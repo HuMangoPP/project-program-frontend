@@ -87,11 +87,12 @@
 
   .recommendation-title h1 {
     padding-inline: .5em;
+    margin-block: 0;
+    vertical-align: middle;
   }
 
   .recommendation-title h1 span {
     background-color: var(--darkdarkblue); 
-    opacity: .5;
   }
   
   .recommendation-text {
@@ -110,4 +111,5 @@
     text-align: right;
     color: white;
     padding: .5em;
+    padding-bottom: 0;
   }

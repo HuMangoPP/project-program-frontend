@@ -178,6 +178,50 @@
     cursor: pointer;
   }
 
+  .slider {
+    height: 0;
+	  width: 0;
+	  visibility: hidden;
+  }
+
+  .notif-switch {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 4em;
+    height: 2em;
+    margin-top: .6em;
+    margin-right: .5em;
+    background: var(--lightbluegrey);
+    display: block;
+    border-radius: 3em;
+	  position: relative;
+  }
+
+  .notif-switch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2em;
+    height: 2em;
+    background: var(--darkdarkblue);
+    border-radius: 1em;
+    transition: 0.3s;
+  }
+
+  .slider:checked + .notif-switch {
+    background: var(--discordblue);
+  }
+
+  .slider:checked + .notif-switch::after {
+    left: calc(100%);
+	  transform: translateX(-100%);
+  }
+
+  .notif-switch:active::after {
+    width: 3em;
+  }
+
   .add-event {
     display: flex;
     flex-direction: column;
