@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-block: .5em;
   }
 
   .login-card h1 {
@@ -20,19 +21,24 @@
   
   .login-btn {
     color: black;
-    background-color: var(--babyblue);
-    border: 0 black solid;
-    padding: 1em;
-    width: 75%;
-    border-radius: 1em;
+    background-color: white;
     font-size: 1.25em;
-    color: white;
+    border: 1px black solid;
+    border-bottom: .25em solid black;
+    padding: 1em;
+    width: 50%;
+    border-radius: .5em;
     font-weight: bold;
+    align-self: center;
   }
   
   .login-btn:hover {
-    background-color: var(--discordblue);
     cursor: pointer;
+  }
+
+  .login-btn:active {
+    border-bottom: 1px solid black;
+    margin-top: calc(.25em - 1px);
   }
 
   .email-submission {
@@ -72,35 +78,28 @@
   }
 
   .send-code-btn:active {
-    margin-top: .25em;
-    border-bottom: none;
-  }
-
-  .verification-code {
-    opacity: 1;
-
-    transition: opacity 1s
+    border-bottom: 1px solid black;
+    margin-top: calc(.25em - 1px);
   }
 
   .code-input {
+    opacity: 1;
     font-size: 1.25em;
     width: 75%;
     padding: .5em;
     border: 2px solid black;
     border-radius: .5em;
     border-bottom: .25em solid black;
+
+    transition: opacity 1s
   }
 
   .hidden-code {
     opacity: 0;
   }
 
-  .login-btn {
-    align-self: center;
-  }
-
-  .warning-msg {
-    color: red;
+  .hidden-code:hover {
+    cursor: default;
   }
 
   .warning-shake {

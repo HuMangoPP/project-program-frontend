@@ -9,7 +9,7 @@ const RecommendationCard = ({ title, desc, image, link }) => {
     }
 
     return (
-        <div className='recommendation-card-load-in recommendation-card'>
+        <div className='recommendation-card'>
             <div className='recommendation-title' 
                  style={imageStyle}>
                 <div className='recommendation-link'

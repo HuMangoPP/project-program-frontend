@@ -1,6 +1,6 @@
 import JournalEntries from "./JournalEntries"
 import { useState, useEffect } from 'react'
-import NewJournalEntry from "./NewJournalEntry"
+import { motion } from 'framer-motion'
 
 const OpenedJournal = ({ instance, userId }) => {
 
@@ -57,11 +57,17 @@ const OpenedJournal = ({ instance, userId }) => {
     }, [])
 
     return (
-        <div className='opened-journal'>
+        <motion.div className='opened-journal'
+        
+        initial={false}
+        animate={{ transform: 'translateX(0)', opacity: 1 }}
+        exit={{ transform: 'translateX(100%)', opacity: 0 }}
+        transition={{ duration: 1 }}
+        >
             <div className='journal-top-pad'></div>
             <JournalEntries journalData={journalData} handleDelete={handleDeleteEntries} />
             <div className='journal-bottom-pad'></div>
-        </div>
+        </motion.div>
     )
 }
 

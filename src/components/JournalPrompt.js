@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const JournalPrompt = ({ instance, setRecommendations, userId }) => {
 
@@ -42,14 +43,20 @@ const JournalPrompt = ({ instance, setRecommendations, userId }) => {
     }
 
     return (
-        <div className='journal-prompt'>
+        <motion.div className='journal-prompt'
+        
+        initial={{ opacity: 0, transform: 'translate(-50%, -50%)' }}
+        animate={{ opacity: 1, transform: 'translate(-50%, -50%)' }}
+        exit={{ opacity: 0, transform: 'translate(-50%, calc(-50% - 50vh))' }}
+        transition={{ duration: 1 }}
+        >
             <form onSubmit={handleSubmit}>
                 <input type='text' 
                         id='journal-query' 
                         name='journal-query'
                         className='journal-input' />
             </form>
-        </div>
+        </motion.div>
     )
 }
 

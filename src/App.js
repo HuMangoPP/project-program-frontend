@@ -8,7 +8,8 @@ import './styles/TaskCollection.css'
 import './styles/Recommendations.css'
 import './styles/MainJournal.css'
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion'
 import Home from './pages/home'
 import Login from './pages/login';
 import MainJournal from './pages/mainJournal'
@@ -33,16 +34,20 @@ function App() {
     document.title = `Pufferfish`
   }, [0])
 
+  const location = useLocation()
+
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/login' element={<Login instance={instance} setUserId={setUserId} setNotifState={setNotifState} />} />
-      <Route path='/journal' element={<MainJournal instance={instance} setRecommendations={setQueriedRecommendations} userId={userId} />} />
-      <Route path='/recommendations' element={<Recommendations recommendations={queriedRecommendations} userId={userId} />} />
-      <Route path='/dashboard'  element={<SingleTaskPage userId={userId} instance={instance} 
-                                setNotifState={setNotifState} notifState={notifState} />} />
-      <Route path='/habit' element={<TasksPage userid={userId} instance={instance} />} />
-    </Routes>
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login instance={instance} setUserId={setUserId} setNotifState={setNotifState} />} />
+        <Route path='/journal' element={<MainJournal instance={instance} setRecommendations={setQueriedRecommendations} userId={userId} />} />
+        <Route path='/recommendations' element={<Recommendations recommendations={queriedRecommendations} userId={userId} />} />
+        <Route path='/dashboard'  element={<SingleTaskPage userId={userId} instance={instance} 
+                                  setNotifState={setNotifState} notifState={notifState} />} />
+        <Route path='/habit' element={<TasksPage userid={userId} instance={instance} />} />
+      </Routes>
+    </AnimatePresence>
   )
 }
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Calendar from 'react-calendar'
 import CalendarEvents from "./CalendarEvents"
 import NewCalendarEvent from "./NewCalendarEvent"
+import { motion } from 'framer-motion'
 
 const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
 
@@ -102,7 +103,13 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
     }, [date])
 
     return (
-        <div className='opened-calendar'>
+        <motion.div className='opened-calendar'
+        
+        initial={false}
+        animate={{ transform: 'translateX(0)', opacity: 1 }}
+        exit={{ transform: 'translateX(-100%)', opacity: 0 }}
+        transition={{ duration: 1 }}
+        >
             <div className='calendar-container'>
                 <Calendar onChange={setDate} value={date} />
             </div>
@@ -112,7 +119,7 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                             notifState={notifState} />
             {calendarForm ? <NewCalendarEvent   closeForm={() => setCalendarForm(false)}
                                                 handleSubmit={handlePostEvents} /> : <div />}
-        </div>
+        </motion.div>
     )
 }
 

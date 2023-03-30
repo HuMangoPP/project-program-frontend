@@ -1,5 +1,5 @@
 import RecommendationCard from "./RecommendationCard"
-import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const CardCarousel = ({ recommendations }) => {
 
@@ -15,18 +15,15 @@ const CardCarousel = ({ recommendations }) => {
         )
     }
 
-    setTimeout(() => {
-        const els = document.getElementsByClassName('recommendation-card')
-
-        for (const el of els) {
-            el.classList.remove('recommendation-card-load-in')
-        }
-    }, 500);
-
     return (
-        <div className='card-carousel'>
+        <motion.div className='card-carousel'
+
+        initial={{ opacity: 0, transform: 'translate(0, 100vh)' }}
+        animate={{ opacity: 1, transform: 'translate(0, 0)' }}
+        exit={{ opacity: 0, transform: 'translate(0, -100vh)' }}
+        transition={{ duration: 1 }}>
             {cards}
-        </div>
+        </motion.div>
     )
 }
 

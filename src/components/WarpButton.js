@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const WarpButton = ({ link, text, top, left }) => {
 
@@ -26,8 +27,12 @@ const WarpButton = ({ link, text, top, left }) => {
             }
 
             surroundingBubbles.push(
-            <div style={smallBubbleStyle} 
-                className='surrounding-bubbles'></div>
+            <motion.div style={smallBubbleStyle} 
+                className='surrounding-bubbles'
+                initial={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
+                animate={{ opacity: .5, transform: 'translate(-50%, -50%) scale(1)' }}
+                exit={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
+                transition={{ duration: 1 }}></motion.div>
             )
         }
 
@@ -42,11 +47,16 @@ const WarpButton = ({ link, text, top, left }) => {
     return (
         <>
             {surroundingBubbleDivs}
-            <div className='warp-btn'
-                 onClick={() => navigate(link)}
-                 style={styling}>
+            <motion.div className='warp-btn'
+
+            initial={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
+            animate={{ opacity: .75, transform: 'translate(-50%, -50%) scale(1)' }}
+            exit={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
+            transition={{ duration: 1 }}
+                style={styling}
+                 onClick={() => navigate(link)}>
                 <h1>{text}</h1>
-            </div>
+            </motion.div>
         </>
     )
 }

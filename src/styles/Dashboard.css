@@ -38,13 +38,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform .5s;
+
+    transform-origin: center;
+    transition: width .5s, height .5s
   }
   
   .closed-calendar:hover {
 
-    transform-origin: center;
-    transform: translate(-50%, -50%) scale(1.25);
+    width: 20em;
+    height: 20em;
     cursor: pointer;
   }
   
@@ -62,12 +64,13 @@
     justify-content: center;
     align-items: center;
 
-    transition: transform .5s;
+    transform-origin: center;
+    transition: width .5s, height .5s
   }
   
   .closed-journal:hover {
-    transform-origin: center;
-    transform: translate(50%, -50%) scale(1.25);
+    width: 20em;
+    height: 20em;
     cursor: pointer;
   }
 
@@ -96,6 +99,11 @@
     width: 50%;
     height: 100%;
   }
+
+  .calendar-animate-close {
+    transition: left .5s;
+    left: -50%
+  }
   
   .opened-journal {
     position: absolute;
@@ -104,6 +112,11 @@
     right: 0;
     width: 50%;
     height: 100%;
+  }
+
+  .journal-animate-close {
+    transition: right .5s;
+    right: -50%
   }
   
   .calendar-container {

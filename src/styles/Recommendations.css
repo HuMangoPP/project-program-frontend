@@ -67,11 +67,6 @@
   .recommendation-card:hover .recommendation-title {
     height: 50%;
   }
-
-  .recommendation-card-load-in {
-    opacity: 0;
-    pointer-events: none;
-  }
   
   .recommendation-title {
     background-color: var(--darkblue);
