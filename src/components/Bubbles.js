@@ -1,6 +1,5 @@
 import Bubble from './Bubble'
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 
 const Bubbles = () => {
     const [bubblesData, setBubblesData] = useState([])

@@ -54,7 +54,7 @@ const OpenedJournal = ({ instance, userId }) => {
 
     useEffect(() => {
         handleGetEntries()
-    }, [])
+    }, [0])
 
     return (
         <motion.div className='opened-journal'

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -58,14 +58,6 @@ const JournalPrompt = ({ instance, setRecommendations, userId }) => {
             </form>
         </motion.div>
     )
-}
-
-JournalPrompt.defaultProps = {
-    prompt: 'How are you feeling?'
-}
-
-JournalPrompt.propTypes = {
-    prompt: PropTypes.string.isRequired
 }
 
 

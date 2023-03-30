@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -22,11 +22,6 @@ const Header = ({ title, subtitle, link }) => {
             </div>
         </motion.div>
     )
-}
-
-Header.defaultProps = {
-    title: 'Title',
-    subtitle: 'Subtitle'
 }
 
 export default Header

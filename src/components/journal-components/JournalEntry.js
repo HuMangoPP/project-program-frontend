@@ -4,7 +4,7 @@ const JournalEntry = ({ date, text, habits, journalId, handleDelete }) => {
 
     const habitRibbons = Array.from({length: habits.length}, (e, i) => {
         return <HabitRibbon 
-            color={`hsl(${Math.floor(Math.random()*360)}, ${100}%, ${75}%)`}
+            color={`hsl(${Math.floor(journalId*60 + 120/5*i)%360}, ${100}%, ${75}%)`}
             text={habits[i]}
         ></HabitRibbon>
     })

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+
 import ClosedCalendar from '../components/calendar-components/ClosedCalendar'
 import ClosedJournal from '../components/journal-components/ClosedJournal'
 import OpenedCalendar from '../components/calendar-components/OpenedCalendar'
@@ -16,7 +16,7 @@ const SingleTaskPage = ({ instance, userId, setNotifState, notifState }) => {
 
     const navigate = useNavigate()
     useEffect(() => {
-        if (userId == -1) navigate('/')
+        if (userId === -1) navigate('/')
     }, [0])
 
     return (

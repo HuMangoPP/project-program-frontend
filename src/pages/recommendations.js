@@ -10,8 +10,8 @@ const Recommendations = ({ recommendations, userId }) => {
 
     const navigate = useNavigate()
     useEffect(() => {
-        if (userId == -1) navigate('/')
-    }, [0])
+        if (userId === -1) navigate('/')
+    }, [])
 
     return (
         <div className='recommendations-page'>

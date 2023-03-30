@@ -9,7 +9,7 @@ const MainJournal = ({ instance, setRecommendations, userId }) => {
 
     const navigate = useNavigate()
     useEffect(() => {
-        if (userId == -1) navigate('/')
+        if (userId === -1) navigate('/')
     }, [0])
 
     return (

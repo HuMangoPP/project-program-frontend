@@ -37,7 +37,7 @@ const WarpButton = ({ link, text, top, left }) => {
         }
 
         setSurroundingBubbles(surroundingBubbles)
-    }, [])
+    }, [0])
 
     const styling = {
         top: `${top}%`,
