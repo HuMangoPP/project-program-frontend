@@ -8,22 +8,108 @@
     height: 50%;
     border-radius: 1.5em;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-block: .5em;
+  }
+
+  .login-card h1 {
+    line-height: 0;
+    margin-top: 0;
   }
   
   .login-btn {
     color: black;
-    background-color: var(--babyblue);
-    border: 0 black solid;
-    padding: 1em;
-    margin-top: 50%;
-    width: 75%;
-    border-radius: 1em;
+    background-color: white;
     font-size: 1.25em;
-    color: white;
+    border: 1px black solid;
+    border-bottom: .25em solid black;
+    padding: 1em;
+    width: 50%;
+    border-radius: .5em;
     font-weight: bold;
+    align-self: center;
   }
   
   .login-btn:hover {
-    background-color: var(--discordblue);
     cursor: pointer;
+  }
+
+  .login-btn:active {
+    border-bottom: 1px solid black;
+    margin-top: calc(.25em - 1px);
+  }
+
+  .email-submission {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+
+  .email-input {
+    width: 75%;
+    padding: .5em;
+    padding-left: 1em;
+    font-size: 1.25em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-right: none;
+    border-bottom: .25em black solid;
+  }
+
+  .send-code-btn {
+    font-size: 1.25em;
+    padding-block: .25em;
+    width: fit-content;
+    background-color: white;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-bottom: .25em solid black;
+  }
+
+  .send-code-btn:hover {
+    background-color: var(--lightbluegrey);
+  }
+
+  .send-code-btn:active {
+    border-bottom: 1px solid black;
+    margin-top: calc(.25em - 1px);
+  }
+
+  .code-input {
+    opacity: 1;
+    font-size: 1.25em;
+    width: 75%;
+    padding: .5em;
+    border: 2px solid black;
+    border-radius: .5em;
+    border-bottom: .25em solid black;
+
+    transition: opacity 1s
+  }
+
+  .hidden-code {
+    opacity: 0;
+  }
+
+  .hidden-code:hover {
+    cursor: default;
+  }
+
+  .warning-shake {
+    animation: horizontal-shake .25s infinite;
+  }
+
+  @keyframes horizontal-shake {
+    0% {transform: translateX(0)}
+    25% {transform: translateX(.25em)}
+    50% {transform: translateX(-.25em)}
+    75% {transform: translateX(.25em)}
+    100% {transform: translateX(0)}
   }

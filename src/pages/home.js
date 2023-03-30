@@ -6,8 +6,8 @@ const Home = () => {
         <div className="home">
             <Bubbles />
             <Header 
-                title='Title' 
-                subtitle='Subtitle'
+                title='Pufferfish' 
+                subtitle='Counselling App'
                 link='/login' />
         </div>
     )

@@ -1,41 +1,63 @@
-import PropTypes from 'prop-types'
-import { useNavigate } from 'react-router-dom'
 
-const JournalPrompt = ({ prompt }) => {
+import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+const JournalPrompt = ({ instance, setRecommendations, userId }) => {
 
     const navigate = useNavigate()
 
     const handleSubmit = e => {
         e.preventDefault()
         const query = document.getElementById('journal-query').value
-        console.log({
-            query,
-        })
+
+        if (!query) return
+
         document.getElementById('journal-query').value = ''
+
+        const makeQuery = async () => {
+            const res = await instance.get('/recommend', {
+                params: {
+                    userid: userId,
+                    input: query,
+                }
+            })
+        
+            const recommendations = res.data.Habits.map((e, i) => {
+                return {
+                    number: i,
+                    habit: e,
+                    desc: res.data.Description[i],
+                    image: res.data.Images[i],
+                    link: res.data.Resources[i],
+                }
+            })
+
+            console.log(recommendations)
+
+            setRecommendations(recommendations)
+        }
+
+        makeQuery()
 
         navigate('/recommendations')
     }
 
     return (
-        <div className='journal-prompt'>
+        <motion.div className='journal-prompt'
+        
+        initial={{ opacity: 0, transform: 'translate(-50%, -50%)' }}
+        animate={{ opacity: 1, transform: 'translate(-50%, -50%)' }}
+        exit={{ opacity: 0, transform: 'translate(-50%, calc(-50% - 50vh))' }}
+        transition={{ duration: 1 }}
+        >
             <form onSubmit={handleSubmit}>
-                <label for='journal-query'></label>
                 <input type='text' 
                         id='journal-query' 
                         name='journal-query'
-                        className='journal-input' 
-                        placeholder={prompt} />
+                        className='journal-input' />
             </form>
-        </div>
+        </motion.div>
     )
-}
-
-JournalPrompt.defaultProps = {
-    prompt: 'How are you feeling?'
-}
-
-JournalPrompt.propTypes = {
-    prompt: PropTypes.string.isRequired
 }
 
 

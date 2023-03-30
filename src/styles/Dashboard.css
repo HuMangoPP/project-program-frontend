@@ -10,8 +10,11 @@
     text-align: center;
   }
   
-  .single-task-page .webpage-container {
-    top: 10%;
+  .single-task-header {
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-size: 2em;
   }
 
   .calendar-half {
@@ -35,13 +38,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform .5s;
+
+    transform-origin: center;
+    transition: width .5s, height .5s
   }
   
   .closed-calendar:hover {
 
-    transform-origin: center;
-    transform: translate(-50%, -50%) scale(1.25);
+    width: 20em;
+    height: 20em;
     cursor: pointer;
   }
   
@@ -59,18 +64,20 @@
     justify-content: center;
     align-items: center;
 
-    transition: transform .5s;
+    transform-origin: center;
+    transition: width .5s, height .5s
   }
   
   .closed-journal:hover {
-    transform-origin: center;
-    transform: translate(50%, -50%) scale(1.25);
+    width: 20em;
+    height: 20em;
     cursor: pointer;
   }
 
   .animate-opening {
     border-radius: 0;
-    width: 40%;
+    pointer-events: none;
+    width: 50%;
     height: 100%;
 
     transition: border-radius 1s, width 1s, height 1s;
@@ -92,6 +99,11 @@
     width: 50%;
     height: 100%;
   }
+
+  .calendar-animate-close {
+    transition: left .5s;
+    left: -50%
+  }
   
   .opened-journal {
     position: absolute;
@@ -100,6 +112,11 @@
     right: 0;
     width: 50%;
     height: 100%;
+  }
+
+  .journal-animate-close {
+    transition: right .5s;
+    right: -50%
   }
   
   .calendar-container {
@@ -121,7 +138,6 @@
     line-height: .5em;
     text-align: left;
     height: 50%;
-    overflow: auto;
   }
   
   .calendar-events-header {
@@ -130,18 +146,93 @@
     justify-content: space-between;
     padding-bottom: .5em;
   }
+
+  .calendar-events-list {
+    height: 85%;
+    width: 100%;
+    padding-right: 1em;
+    overflow: auto;
+  }
   
   .calendar-event-card {
     background-color: var(--lightbluegrey);
     padding: 1em 1.5em;
     margin: 1em 0;
     border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
   }
-  
+
   .calendar-event-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  
+  .calendar-event-text {
+    width: 100%;
+    font-size: 1.35em;
+    line-height: 1.35em;
+    height: auto;
+    overflow: hidden;
+
+    text-decoration: line-through;
+    text-decoration-color: transparent;
+    transition: text-decoration-color .5s;
+  }
+
+  .calendar-event-text p {
+    margin-block: 0;
+  }
+
+  .calendar-event-text:hover {
+    text-decoration-color: var(--lightred);
+    cursor: pointer;
+  }
+
+  .slider {
+    height: 0;
+	  width: 0;
+	  visibility: hidden;
+  }
+
+  .notif-switch {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 4.5em;
+    height: 2.5em;
+    margin-top: .25em;
+    margin-right: 1em;
+    background: var(--lightbluegrey);
+    display: block;
+    border-radius: 3em;
+	  position: relative;
+  }
+
+  .notif-switch::after {
+    content: '';
+    position: absolute;
+    top: .25em;
+    left: .25em;
+    width: 2em;
+    height: 2em;
+    background: var(--darkdarkblue);
+    border-radius: 1em;
+    transition: 0.3s;
+  }
+
+  .slider:checked + .notif-switch {
+    background: var(--darkblue);
+  }
+
+  .slider:checked + .notif-switch::after {
+    left: calc(100% - .25em);
+	  transform: translateX(-100%);
+  }
+
+  .notif-switch:active::after {
+    width: 3em;
   }
 
   .add-event {
@@ -155,6 +246,7 @@
 
   .add-event:hover {
     background-color: var(--lightblue);
+    cursor: pointer;
   }
   
   .journal-top-pad {
@@ -169,7 +261,6 @@
     line-height: .5em;
     text-align: left;
     height: 75%;
-    overflow: auto;
   }
   
   .journal-container-header {
@@ -177,6 +268,13 @@
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: .5em;
+  }
+
+  .journal-entries-list {
+    height: 90%;
+    width: 100%;
+    padding-right: 1em;
+    overflow: auto;
   }
 
   .add-entry {
@@ -188,10 +286,6 @@
     border-radius: .5em;
   }
 
-  .add-entry:hover {
-    background-color: var(--lightblue);
-  }
-  
   .journal-entry-card {
     background-color: var(--lightbluegrey);
     padding: 1em 1.5em;
@@ -201,6 +295,19 @@
   
   .journal-entry-card h1 {
     padding-bottom: .5em;
+  }
+
+  .journal-entry-text {
+    line-height: 2em;
+    text-decoration: line-through;
+    text-decoration-color: transparent;
+
+    transition: text-decoration-color .5s;
+  }
+
+  .journal-entry-text:hover {
+    text-decoration-color: var(--lightred);
+    cursor: pointer;
   }
   
   ::-webkit-scrollbar {
@@ -222,12 +329,16 @@
     top: 50%;
     left: 50%;
     width: 50%;
-    height: 50%;
+    height: fit-content;
     transform: translate(-50%, -50%);
     background-color: white;
     box-shadow: 1em 1em var(--discordblue), -1em -1em var(--discordlightgrey);
     border-radius: 1em;
     padding-inline: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .new-calendar-event h1 {
@@ -240,6 +351,7 @@
     flex-direction: column;
     text-align: left;
     font-size: 1.25em;
+    margin-block: .5em;
   }
 
   .new-calendar-event-title {
@@ -248,59 +360,8 @@
     border: 1px solid black;
     border-bottom: .3em solid black;
     font-size: 1em;
-  }
-
-  .new-calendar-form-desc {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-block: 1em;
-    font-size: 1.25em;
-  }
-
-  .new-calendar-event-desc {
-    position: relative;
-    height: 15%;
+    height: 5em;
     resize: none;
-    padding: .5em;
-    padding-inline: .75em;
-    border: 1px solid black;
-    border-bottom: .4em solid black;
-    font-size: 1em;
-  }
-
-  .new-calendar-form-time {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-block: 1em;
-    font-size: 1.25em;
-  }
-
-  .new-calendar-form-start {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .new-calendar-form-end {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-  }
-
-  .new-calendar-event-start input[type="time"] {
-    font-size: 1.5em;
-    padding: .25em;
-    border: 1px solid black;
-    border-bottom: .25em solid black;
-  }
-
-  .new-calendar-event-end input[type="time"] {
-    font-size: 1.5em;
-    padding: .25em;
-    border: 1px solid black;
-    border-bottom: .25em solid black;
   }
 
   .submit-btn {
@@ -328,6 +389,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 2em;
   }
 
   .new-journal-entry {
@@ -371,4 +433,59 @@
     border: 1px solid black;
     border-bottom: .25em solid black;
     font-size: 1.5em;
+  }
+
+  .habit-collection { 
+    width: 100%;
+    height: 16em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: width .5s, height .5s;
+  }
+
+  .habit-ribbon {
+    width: fit-content;
+    height: 3em;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+
+    transform-origin: center left;
+    transition: transform 1s
+  }
+
+  .habit-ribbon:hover {
+    cursor: pointer;
+    transform: scale(1.5, 1.25);
+  }
+
+  .habit-ribbon-textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .habit-ribbon-text {
+    padding-inline: .5em;
+    vertical-align: middle;
+    
+    transform-origin: center left;
+    transition: transform 1s;
+  }
+
+  .habit-ribbon:hover .habit-ribbon-text {
+    transform: scale(.67, .8);
+  }
+
+  .habit-ribbon-triangles {
+    width: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ribbon-top, .ribbon-bottom {
+    width: 100%;
+    height: 50%;
   }

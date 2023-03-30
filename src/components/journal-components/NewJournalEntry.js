@@ -1,4 +1,4 @@
-const NewJournalEntry = ({ closeForm }) => {
+const NewJournalEntry = ({ closeForm, instance }) => {
 
     const handleSubmit = e => {
         e.preventDefault()
