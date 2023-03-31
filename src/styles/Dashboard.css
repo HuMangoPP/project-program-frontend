@@ -98,6 +98,8 @@
     left: 0;
     width: 50%;
     height: 100%;
+
+    box-shadow: var(--darkdarkblue) 0px 20px 25px -5px, var(--darkdarkblue) 0px 10px 10px -5px;
   }
 
   .calendar-animate-close {
@@ -112,6 +114,8 @@
     right: 0;
     width: 50%;
     height: 100%;
+
+    box-shadow: var(--darkdarkblue) 0px 20px 25px -5px, var(--darkdarkblue) 0px 10px 10px -5px;
   }
 
   .journal-animate-close {

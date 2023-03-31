@@ -23,7 +23,7 @@ import axios from 'axios';
 function App() {
 
   const instance = axios.create({
-    baseURL: 'http://pufferfishproject.pythonanywhere.com/'
+    baseURL: 'https://pufferfishproject.pythonanywhere.com/'
   })
 
   const [queriedRecommendations, setQueriedRecommendations] = useState([])
