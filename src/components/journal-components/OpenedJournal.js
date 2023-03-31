@@ -30,7 +30,6 @@ const OpenedJournal = ({ instance, userId }) => {
             })
 
             setJournalData(data)
-            console.log(journalData)
         }
 
         getEntries()
@@ -44,8 +43,6 @@ const OpenedJournal = ({ instance, userId }) => {
                     journalid: journalId,
                 }
             })
-
-            console.log(res)
         }
 
         deleteEntries()

@@ -9,6 +9,8 @@
     padding-top: 1em;
     padding-bottom: 2em;
     padding-inline-start: .5em;
+
+    box-shadow: var(--darkdarkblue) 0px 20px 25px -5px, var(--darkdarkblue) 0px 10px 10px -5px;
   }
 
   .react-calendar__navigation {

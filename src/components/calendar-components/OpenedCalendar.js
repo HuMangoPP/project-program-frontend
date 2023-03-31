@@ -53,7 +53,6 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                     date: date.toLocaleDateString(),
                 }
             })
-            console.log(res)
     
             handleGetEvents()
     
@@ -71,8 +70,6 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                     reminderid: reminderId,
                 }
             })
-
-            console.log(res)
         }
 
         deleteEvents()
@@ -80,18 +77,14 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
     }
 
     const handleNotifToggle = () => {
-        setNotifState(!notifState)
+        const newNotifState = !notifState
+        setNotifState(newNotifState)
         const toggleNotif = async () => {
             const res = await instance.get('/togglenotifications', {
                 params: {
                     userid: userId,
-                    notifications: !notifState,
+                    notifications: newNotifState,
                 }
-            })
-
-            console.log({
-                state: !notifState,
-                res: res,
             })
         }
 
