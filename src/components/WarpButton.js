@@ -12,7 +12,7 @@ const WarpButton = ({ link, text, top, left }) => {
 
         const angles = Array.from({length: numSurrounding}, () => Math.floor(Math.random()*360))
         const radii = Array.from({length: numSurrounding}, () => Math.floor(-Math.random()*10+15))
-        const sizes = Array.from({length: numSurrounding}, () => `${Math.floor(Math.random()*3+3)}em`)
+        const sizes = Array.from({length: numSurrounding}, () => `${Math.floor(Math.random()*3+7)}vh`)
         
         let surroundingBubbles = []
         for (let i=0; i<numSurrounding; i++) {

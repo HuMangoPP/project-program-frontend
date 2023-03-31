@@ -1,5 +1,6 @@
 import { BsJournalPlus } from 'react-icons/bs'
 import JournalEntry from './JournalEntry'
+import { useNavigate } from 'react-router-dom'
 
 const JournalEntries = ({ journalData, handleDelete }) => {
 
@@ -13,11 +14,13 @@ const JournalEntries = ({ journalData, handleDelete }) => {
                              handleDelete={handleDelete} />
     })
 
+    const navigate = useNavigate()
+
     return (
         <div className='journal-entries-container'>
             <div className='journal-container-header'>
                 <h1>Journal Entries</h1>
-                <div className='add-entry'>
+                <div className='add-entry' onClick={() => navigate('/journal')}>
                     <BsJournalPlus size={'2em'} />
                 </div>
             </div>

@@ -24,7 +24,7 @@ const CalendarEvents = ({ eventData, openForm, handleDelete, handleToggle, notif
                            onChange={() => {
                             handleToggle(notifState)
                             }} />
-                    <label className='notif-switch' for='notif-switch'>Toggle</label>
+                    <label className='notif-switch' for='notif-switch'></label>
                     <div  className='add-event'>
                         <BsCalendarPlus size={'2em'} onClick={() => openForm()}/>
                     </div>

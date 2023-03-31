@@ -17,7 +17,7 @@ const ClosedJournal = ({ onOpen }) => {
             exit={{ opacity: 0, transform: 'translate(50%, -50%) scale(0)' }}
             transition={{ duration: .5 }}
             >
-            <BsFillJournalBookmarkFill color={'white'} size={'6em'}/>
+            <BsFillJournalBookmarkFill color={'white'} size={'10vh'}/>
         </motion.div>
     )
 }

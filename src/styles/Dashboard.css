@@ -14,7 +14,7 @@
     position: absolute;
     width: 100%;
     color: white;
-    font-size: 2em;
+    font-size: 3vh;
   }
 
   .calendar-half {
@@ -30,8 +30,8 @@
     background-color: var(--discordblue);
     top: 50%;
     left: 25%;
-    width: 15em;
-    height: 15em;
+    width: 25vh;
+    height: 25vh;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -45,8 +45,8 @@
   
   .closed-calendar:hover {
 
-    width: 20em;
-    height: 20em;
+    width: 30vh;
+    height: 30vh;
     cursor: pointer;
   }
   
@@ -55,8 +55,8 @@
     background-color: #7289da;
     top: 50%;
     right: 25%;
-    width: 15em;
-    height: 15em;
+    width: 25vh;
+    height: 25vh;
     border-radius: 50%;
     transform: translate(50%, -50%);
     display: flex;
@@ -69,8 +69,8 @@
   }
   
   .closed-journal:hover {
-    width: 20em;
-    height: 20em;
+    width: 30vh;
+    height: 30vh;
     cursor: pointer;
   }
 
@@ -85,8 +85,8 @@
 
   .animate-closing {
     border-radius: 50%;
-    width: 15em;
-    height: 15em;
+    width: 25vh;
+    height: 25vh;
 
     transition: border-radius 1s, width 1s, height 1s;
   }
@@ -125,19 +125,19 @@
     justify-content: center;
     flex-direction: column;
     width: 75%;
-    padding: 3em;
+    padding: 4vh 2.5vw;
     left: 50%;
     transform: translate(-50%, 0);
   }
   
   .calendar-events-container {
-    margin: 0 2.5em;
-    padding: 1em 1.5em;
-    border-radius: 1em;
+    margin: 0 2.5vw;
+    padding: 1.5vh 1.5vw;
+    border-radius: 1.5vh;
     background-color: white;
-    line-height: .5em;
+    line-height: .75vh;
     text-align: left;
-    height: 50%;
+    height: 57%;
 
     box-shadow: var(--darkdarkblue) 0px 20px 25px -5px, var(--darkdarkblue) 0px 10px 10px -5px;
   }
@@ -146,21 +146,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: .5em;
+    padding-bottom: .75vh;
+    font-size: 1vw;
   }
 
   .calendar-events-list {
-    height: 85%;
+    height: 100%;
     width: 100%;
-    padding-right: 1em;
+    padding-right: 1vw;
     overflow: auto;
   }
   
   .calendar-event-card {
     background-color: var(--lightbluegrey);
-    padding: 1em 1.5em;
-    margin: 1em 0;
-    border-radius: 1em;
+    padding: 1.5vh 1.5vw;
+    margin: 1vh 0;
+    border-radius: 2vh;
 
     display: flex;
     flex-direction: column;
@@ -170,12 +171,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 2vh;
   }
   
   .calendar-event-text {
     width: 100%;
-    font-size: 1.35em;
-    line-height: 1.35em;
+    font-size: 2.25vh;
+    line-height: 2.25vh;
     height: auto;
     overflow: hidden;
 
@@ -185,7 +187,7 @@
   }
 
   .calendar-event-text p {
-    margin-block: 0;
+    margin-block: .5vh;
   }
 
   .calendar-event-text:hover {
@@ -201,26 +203,25 @@
 
   .notif-switch {
     cursor: pointer;
-    text-indent: -9999px;
-    width: 4.5em;
-    height: 2.5em;
-    margin-top: .25em;
-    margin-right: 1em;
+    width: 3.5vw;
+    height: 4vh;
+    margin-top: 1vh;
+    margin-right: 1vw;
     background: var(--lightbluegrey);
     display: block;
-    border-radius: 3em;
+    border-radius: 3vh;
 	  position: relative;
   }
 
   .notif-switch::after {
     content: '';
     position: absolute;
-    top: .25em;
-    left: .25em;
-    width: 2em;
-    height: 2em;
+    top: .5vh;
+    left: .5vh;
+    width: 3vh;
+    height: 3vh;
     background: var(--darkdarkblue);
-    border-radius: 1em;
+    border-radius: 50%;
     transition: 0.3s;
   }
 
@@ -229,21 +230,23 @@
   }
 
   .slider:checked + .notif-switch::after {
-    left: calc(100% - .25em);
+    left: calc(100% - .5vh);
 	  transform: translateX(-100%);
   }
 
   .notif-switch:active::after {
-    width: 3em;
+    width: 3vh;
   }
 
   .add-event {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-inline: .5em;
-    border-radius: .5em;
+    padding-inline: .5vw;
+    border-radius: 1vh;
     background-color: white;
+
+    transition: background-color .5s;
   }
 
   .add-event:hover {
@@ -252,17 +255,33 @@
   }
   
   .journal-top-pad {
-    height: 15%;
+    height: 5%;
+  }
+
+  .add-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-inline: .5vw;
+    border-radius: 1vh;
+    background-color: white;
+
+    transition: background-color .5s;
+  }
+
+  .add-entry:hover {
+    background-color: var(--lightblue);
+    cursor: pointer;
   }
   
   .journal-entries-container {
-    margin: 0 2.5em;
-    padding: 1em 1.5em;
-    border-radius: 1em;
+    margin: 0 2.5vw;
+    padding: 1.5vh 1.5vw;
+    border-radius: 1.5vh;
     background-color: white;
-    line-height: .5em;
+    line-height: .75vh;
     text-align: left;
-    height: 75%;
+    height: 87%;
 
     box-shadow: var(--darkdarkblue) 0px 20px 25px -5px, var(--darkdarkblue) 0px 10px 10px -5px;
   }
@@ -271,38 +290,38 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: .5em;
+    padding-bottom: .75vh;
+    font-size: 1vw;
   }
 
   .journal-entries-list {
     height: 90%;
     width: 100%;
-    padding-right: 1em;
+    padding-right: 1vw;
     overflow: auto;
-  }
-
-  .add-entry {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: white;
-    padding-inline: .5em;
-    border-radius: .5em;
   }
 
   .journal-entry-card {
     background-color: var(--lightbluegrey);
-    padding: 1em 1.5em;
-    margin: 1em 0;
+    padding: 1.5vh 1.5vw;
+    padding-bottom: 2vh;
+    margin: 1vh 0;
     border-radius: 1em;
   }
   
   .journal-entry-card h1 {
-    padding-bottom: .5em;
+    padding-bottom: .5vh;
+    font-size: 1.5vw;
+  }
+
+  .journal-entry-card h2 {
+    padding-bottom: .5vh;
+    font-size: 1.25vw;
   }
 
   .journal-entry-text {
-    line-height: 2em;
+    line-height: 2vh;
+    font-size: 1vw;
     text-decoration: line-through;
     text-decoration-color: transparent;
 
@@ -315,17 +334,17 @@
   }
   
   ::-webkit-scrollbar {
-    width: 1em;
+    width: 1vw;
   }
   
   ::-webkit-scrollbar-track {
-    margin-block: 1em;
+    margin-block: 1vw;
   }
   
   ::-webkit-scrollbar-thumb {
     background: var(--lightbluegrey);
-    border-radius: 1em;
-    border: white .3em solid;
+    border-radius: .5vw;
+    border: white .25vw solid;
   }
 
   .new-calendar-event {
@@ -336,9 +355,9 @@
     height: fit-content;
     transform: translate(-50%, -50%);
     background-color: white;
-    box-shadow: 1em 1em var(--discordblue), -1em -1em var(--discordlightgrey);
-    border-radius: 1em;
-    padding-inline: 1.5em;
+    box-shadow: 1vh 1vw var(--discordblue), -1vh -1vw var(--discordlightgrey);
+    border-radius: 2vh;
+    padding-inline: 1vw;
 
     display: flex;
     flex-direction: column;
@@ -346,7 +365,7 @@
   }
 
   .new-calendar-event h1 {
-    font-size: 2em;
+    font-size: 1.75vw;
     margin-bottom: 0;
   }
 
@@ -354,28 +373,28 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 1.25em;
-    margin-block: .5em;
+    font-size: 1vw;
+    margin-block: .5vh;
   }
 
   .new-calendar-event-title {
-    padding: .5em;
-    padding-inline: .75em;
+    padding: 1vh;
+    padding-inline: .75vw;
     border: 1px solid black;
-    border-bottom: .3em solid black;
-    font-size: 1em;
-    height: 5em;
+    border-bottom: .5vh solid black;
+    font-size: 2vh;
+    height: 5vh;
     resize: none;
   }
 
   .submit-btn {
     background-color: white;
     border: 1px solid black;
-    font-size: 1.25em;
-    border-bottom: .3em solid black;
+    font-size: 1.25vw;
+    border-bottom: .5vh solid black;
     width: fit-content;
-    padding-inline: .5em;
-    padding-block: .25em;
+    padding-inline: .5vw;
+    padding-block: .5vh;
     cursor: pointer;
   }
 
@@ -385,18 +404,19 @@
 
   .submit-btn:active {
     background-color: var(--discordlightgrey);
-    border-bottom: .1em solid black;
-    margin-top: .2em;
+    border-bottom: 1px solid black;
+    margin-top: calc(.5vh - 1px);
   }
 
   .btn-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 2em;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
   }
 
-  .new-journal-entry {
+  /* .new-journal-entry {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -404,7 +424,7 @@
     height: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    box-shadow: -1em 1em var(--discordblue), 1em -1em var(--discordlightgrey);
+    box-shadow: -1vh 1vw var(--discordblue), 1vh -1vw var(--discordlightgrey);
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -437,11 +457,10 @@
     border: 1px solid black;
     border-bottom: .25em solid black;
     font-size: 1.5em;
-  }
+  } */
 
   .habit-collection { 
     width: 100%;
-    height: 16em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -451,7 +470,7 @@
 
   .habit-ribbon {
     width: fit-content;
-    height: 3em;
+    height: 5vh;
     display: flex;
     white-space: nowrap;
     overflow: hidden;
@@ -472,7 +491,8 @@
   }
 
   .habit-ribbon-text {
-    padding-inline: .5em;
+    font-size: 1vw;
+    padding-inline: .5vw;
     vertical-align: middle;
     
     transform-origin: center left;
@@ -484,7 +504,7 @@
   }
 
   .habit-ribbon-triangles {
-    width: 3em;
+    width: 3vw;
     display: flex;
     flex-direction: column;
   }

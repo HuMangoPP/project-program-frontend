@@ -17,7 +17,7 @@ const ClosedCalendar = ({ onOpen }) => {
             exit={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
             transition={{ duration: .5 }}
             >
-            <BsCalendarCheck color={'white'} size={'6em'} />
+            <BsCalendarCheck color={'white'} size={'10vh'} />
         </motion.div>
     )
 }
