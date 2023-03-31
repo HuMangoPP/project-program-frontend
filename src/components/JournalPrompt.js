@@ -43,9 +43,9 @@ const JournalPrompt = ({ instance, setRecommendations, userId }) => {
     return (
         <motion.div className='journal-prompt'
         
-        initial={{ opacity: 0, transform: 'translate(-50%, -50%)' }}
-        animate={{ opacity: 1, transform: 'translate(-50%, -50%)' }}
-        exit={{ opacity: 0, transform: 'translate(-50%, calc(-50% - 50vh))' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transform: 'translate(0, calc(0 - 50vh))' }}
         transition={{ duration: 1 }}
         >
             <form onSubmit={handleSubmit}>

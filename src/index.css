@@ -52,7 +52,7 @@ button:hover {
 }
 
 .webpage-link {
-  font-size: 4em;
+  font-size: 4vw;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -71,11 +71,23 @@ button:hover {
   background-size: 100% 5px, 0 5px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 400ms;
+  transition: background-size .75s;
+
+  transform-origin: center;
 }
 
 .webpage-link h1 {
   line-height: 0;
+  animation: wiggle 3s infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  60% { transform: rotate(0deg); }
+  70% { transform: rotate(5deg); }
+  80% { transform: rotate(-5deg); }
+  90% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .webpage-link:hover {
@@ -84,7 +96,7 @@ button:hover {
 }
 
 .webpage-subtitle {
-  font-size: 3em;
+  font-size: 2.5vw;
   color: white;
   line-height: 0;
   width: fit-content;
@@ -92,12 +104,7 @@ button:hover {
 }
 
 .main-journal .webpage-subtitle {
-  font-size: 4em;
-}
-
-.recommendations-page .webpage-subtitle {
-  margin: 0;
-  font-size: 4em;
+  font-size: 4vw;
 }
 
 .bubbles {
@@ -129,8 +136,8 @@ button:hover {
   color: white;
   transform: translate(-50%, -50%);
   opacity: 0.75;
-  width: 15em;
-  height: 15em;
+  width: 20vh;
+  height: 20vh;
 
   display: flex;
   flex-direction: column;
@@ -143,12 +150,12 @@ button:hover {
 
 .warp-btn:hover {
   cursor: pointer;
-  width: 18em;
-  height: 18em;
+  width: 25vh;
+  height: 25vh;
 }
 
 .warp-btn h1 {
-  width: 75%;
+  font-size: 2.5vh;
 }
 
 .surrounding-bubbles {

@@ -22,6 +22,15 @@ const SingleTaskPage = ({ instance, userId, setNotifState, notifState }) => {
     return (
         <div className='single-task-page' >
             <Bubbles />
+            <motion.div className='single-task-header'
+            
+            initial={{ opacity: 0, transform: 'translate(0, 50vh)' }}
+            animate={{ opacity: 1, transform: 'translate(0, 0)' }}
+            exit={{ opacity: 0, transform: 'translate(0, -50vh)' }}
+            transition={{ duration: 1 }}
+            >
+                <h1>Dashboard</h1>
+            </motion.div>
             <WarpButton link='/journal' text='Return to Journal' 
                         top={90} left={50} size={15} />
             <div className='calendar-half' onClick={() => {
@@ -51,15 +60,6 @@ const SingleTaskPage = ({ instance, userId, setNotifState, notifState }) => {
                 <OpenedJournal instance={instance} userId={userId} /> : 
                 <ClosedJournal onOpen={() => setJournalOpen(true)} />}
             </div>
-            <motion.div className='single-task-header'
-            
-            initial={{ opacity: 0, transform: 'translate(0, 50vh)' }}
-            animate={{ opacity: 1, transform: 'translate(0, 0)' }}
-            exit={{ opacity: 0, transform: 'translate(0, -50vh)' }}
-            transition={{ duration: 1 }}
-            >
-                <h1>Dashboard</h1>
-            </motion.div>
         </div> 
     )
 }

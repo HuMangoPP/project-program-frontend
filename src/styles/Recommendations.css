@@ -14,11 +14,11 @@
 
   .recommendations-header {
     position: relative;
-    font-size: 3em;
+    font-size: 2.5vw;
+    line-height: 5vw;
     color: white;
     width: 90%;
     text-align: center;
-    line-height: 2.5em;
   }
 
   .recommendations-header h1 {
@@ -41,15 +41,15 @@
   .recommendation-card {
     opacity: 0.6;
     width: 20%;
-    margin: 1em;
+    margin: 1vh;
     height: 75%;
     text-align: center;
-    border-radius: 1em;
+    border-radius: 1vh;
     transition: transform .5s, opacity .5s;
   }
 
   .recommendation-card h1 {
-    font-size: 1.5em;
+    font-size: 1.25vw;
   }
 
   .recommendation-card .recommendation-title {
@@ -70,8 +70,8 @@
   
   .recommendation-title {
     background-color: var(--darkblue);
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border-top-left-radius: 2vh;
+    border-top-right-radius: 2vh;
     color: white;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -81,7 +81,7 @@
   }
 
   .recommendation-title h1 {
-    padding-inline: .5em;
+    padding-inline: 1vh;
     margin-block: 0;
     vertical-align: middle;
   }
@@ -92,19 +92,20 @@
   
   .recommendation-text {
     background-color: white;
-    padding: 1em;
+    padding: 1.5vh;
+    padding-block: 1vh;
     color: black;
     height: 75%;
     bottom: 100%;
     text-align: left;
-    border-bottom-left-radius: 1em;
-    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 2vh;
+    border-bottom-right-radius: 2vh;
     overflow: auto;
   }
 
   .recommendation-link {
     text-align: right;
     color: white;
-    padding: .5em;
+    padding: 1vh;
     padding-bottom: 0;
   }
