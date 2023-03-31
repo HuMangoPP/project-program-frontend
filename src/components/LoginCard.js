@@ -24,8 +24,6 @@ const LoginCard = ({ instance, setUserId, setNotifState }) => {
                     email: email,
                 } 
             })
-
-            console.log(res)
             setSendMsg(res.data.Status)
         }
         sendCode()
@@ -46,11 +44,8 @@ const LoginCard = ({ instance, setUserId, setNotifState }) => {
                     passcode: code,
                 }
             })
-            
-            console.log(res.data)
             let performShake = false
             if (res.data.Result === 'Success') {
-                console.log(res.data.UserID)
                 setUserId(res.data.UserID)
                 setNotifState(res.data.notifications)
                 setWarningMsg('')

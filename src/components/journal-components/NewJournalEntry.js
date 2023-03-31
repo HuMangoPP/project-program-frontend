@@ -5,10 +5,6 @@ const NewJournalEntry = ({ closeForm, instance }) => {
         const field = document.getElementById('journal-field').value
         
         if (!field) return
-
-        console.log({
-            field,
-        })
         
         closeForm()
     }

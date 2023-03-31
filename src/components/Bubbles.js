@@ -10,13 +10,7 @@ const Bubbles = () => {
         const lefts = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*100)}%`)
         const sizes = Array.from({length: numBubbles}, () => `${Math.floor(Math.random()*15+5)}em`)
         const topStart = Array.from({ length: numBubbles }, (e, i) => tops[i]+100)
-        const topEnd = Array.from({ length: numBubbles }, (e, i) => tops[i  ]-100)
-
-        console.log({
-            start: topStart,
-            stay: tops,
-            end: topEnd,
-        })
+        const topEnd = Array.from({ length: numBubbles }, (e, i) => tops[i]-100)
 
         let bubbles = []
         for (let i=0; i<numBubbles; i++) {

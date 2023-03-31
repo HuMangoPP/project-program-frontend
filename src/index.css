@@ -27,6 +27,10 @@ code {
     monospace;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .webpage-container {
   position: absolute;
   width: fit-content;
