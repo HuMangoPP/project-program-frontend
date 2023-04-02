@@ -48,7 +48,10 @@ const JournalPrompt = ({ instance, setRecommendations, userId }) => {
         exit={{ opacity: 0, transform: 'translate(0, calc(0 - 50vh))' }}
         transition={{ duration: 1 }}
         >
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} 
+                  style={{
+                    width: '60%'
+                  }}>
                 <input type='text' 
                         id='journal-query' 
                         name='journal-query'

@@ -25,17 +25,22 @@ const CalendarEvents = ({ eventData, openForm, handleDelete, handleToggle, notif
                         flexDirection: 'column',
                         justifyContent: 'space-around'
                     }}>
-                        <MdNotifications size={'2.5em'} />
+                        <MdNotifications size={'2.25vw'} />
                     </div>
-                    <input type='checkbox' className='slider' id='notif-switch'
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-around'
+                    }}>
+                        <input type='checkbox' className='slider' id='notif-switch'
                            checked={notifState} 
                            onChange={() => {
                             handleToggle(notifState)
                             }} />
-                    <label className='notif-switch' for='notif-switch'>
-                    </label>
+                        <label className='notif-switch' ></label>
+                    </div>
                     <div  className='add-event'>
-                        <BsCalendarPlus size={'2em'} onClick={() => openForm()}/>
+                        <BsCalendarPlus size={'2.25vw'} onClick={() => openForm()}/>
                     </div>
                 </div>
             </div>

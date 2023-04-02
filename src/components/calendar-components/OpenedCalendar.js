@@ -85,7 +85,7 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
     }
 
     const handleNotifToggle = () => {
-        const newNotifState = !notifState
+        const newNotifState = (notifState + 1) % 2
         setNotifState(newNotifState)
         const toggleNotif = async () => {
             const res = await instance.get('/togglenotifications', {
@@ -93,11 +93,6 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                     userid: userId,
                     notifications: newNotifState,
                 }
-            })
-
-            console.log({
-                state: newNotifState,
-                res,
             })
         }
 

@@ -30,6 +30,7 @@ const WarpButton = ({ link, text, top, left }) => {
             surroundingBubbles.push(
             <div style={smallBubbleStyle} 
                 className='surrounding-bubbles'
+                key={`warp-${i}`}
                 ></div>
             )
         }
