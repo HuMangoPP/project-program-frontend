@@ -1,5 +1,6 @@
 import Bubble from './Bubble'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const Bubbles = () => {
     const [bubblesData, setBubblesData] = useState([])
@@ -31,9 +32,15 @@ const Bubbles = () => {
     })
 
     return (
-        <div className='bubbles'>
+        <motion.div className='bubbles'
+        
+            initial={false}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+        >
             {bubblesData}
-        </div>
+        </motion.div>
     )
 }
 

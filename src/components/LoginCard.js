@@ -44,6 +44,7 @@ const LoginCard = ({ instance, setUserId, setNotifState }) => {
                     passcode: code,
                 }
             })
+            console.log(res)
             let performShake = false
             if (res.data.Result === 'Success') {
                 setUserId(res.data.UserID)
