@@ -1,5 +1,5 @@
 .react-calendar {
-    width: 50vw;
+    width: 30vw;
     height: fit-content;
     background-color: white;
     color: var(--darkblue);
@@ -42,8 +42,9 @@
 
   .react-calendar__tile {
     font-size: 1vw;
+    width: 1.5vw;
     padding-inline: .5vw;
-    padding-block: .5vh;
+    padding-block: 1.25vh;
   }
   
   .react-calendar__tile:enabled:hover,
@@ -80,6 +81,10 @@
 .react-calendar__tile--active:enabled:focus {
  background: var(--darkblue);
  color: white;
+}
+
+.react-calendar__tile--active abbr {
+  background-color: transparent;
 }
 
 .react-calendar--selectRange .react-calendar__tile--hover {
