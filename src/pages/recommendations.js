@@ -14,7 +14,13 @@ const Recommendations = ({ recommendations, userId }) => {
     }, [])
 
     return (
-        <div className='recommendations-page'>
+        <motion.div className='recommendations-page'
+        
+            initial={false}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+        >
             <Bubbles />
             <motion.div className='recommendations-header'
             
@@ -27,7 +33,7 @@ const Recommendations = ({ recommendations, userId }) => {
             </motion.div>
             <WarpButton link='/dashboard' top={10} left={95} text='Jump to Dashboard' />
             <CardCarousel recommendations={recommendations} />
-        </div>
+        </motion.div>
     )
 }
 

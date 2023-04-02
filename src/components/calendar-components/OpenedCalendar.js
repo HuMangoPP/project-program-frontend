@@ -94,6 +94,11 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                     notifications: newNotifState,
                 }
             })
+
+            console.log({
+                state: newNotifState,
+                res,
+            })
         }
 
         toggleNotif()

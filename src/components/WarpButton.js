@@ -11,7 +11,7 @@ const WarpButton = ({ link, text, top, left }) => {
         const numSurrounding = 10
 
         const angles = Array.from({length: numSurrounding}, () => Math.floor(Math.random()*360))
-        const radii = Array.from({length: numSurrounding}, () => Math.floor(-Math.random()*10+15))
+        const radii = Array.from({length: numSurrounding}, () => Math.floor(Math.random()*5+10))
         const sizes = Array.from({length: numSurrounding}, () => `${Math.floor(Math.random()*3+7)}vh`)
         
         let surroundingBubbles = []
@@ -20,6 +20,7 @@ const WarpButton = ({ link, text, top, left }) => {
             let yRel = `${top + radii[i] * Math.sin(Math.PI/180 * angles[i])}%`
             
             const smallBubbleStyle = {
+                position: 'absolute',
                 top: yRel,
                 left: xRel,
                 width: sizes[i],
@@ -27,12 +28,9 @@ const WarpButton = ({ link, text, top, left }) => {
             }
 
             surroundingBubbles.push(
-            <motion.div style={smallBubbleStyle} 
+            <div style={smallBubbleStyle} 
                 className='surrounding-bubbles'
-                initial={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
-                animate={{ opacity: .5, transform: 'translate(-50%, -50%) scale(1)' }}
-                exit={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
-                transition={{ duration: 1 }}></motion.div>
+                ></div>
             )
         }
 
@@ -40,24 +38,32 @@ const WarpButton = ({ link, text, top, left }) => {
     }, [0])
 
     const styling = {
-        top: `${top}%`,
-        left: `${left}%`,
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
     }
 
     return (
-        <>
-            {surroundingBubbleDivs}
-            <motion.div className='warp-btn'
+        <motion.div
+        style={styling}
 
-            initial={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
-            animate={{ opacity: .75, transform: 'translate(-50%, -50%) scale(1)' }}
-            exit={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}
-            transition={{ duration: 1 }}
-                style={styling}
-                 onClick={() => navigate(link)}>
+        initial={{ opacity: 0, transformOrigin: `${left}% ${top}%`, transform: 'scale(0)' }}
+        animate={{ opacity: .75, transformOrigin: `${left}% ${top}%`, transform: 'scale(1)' }}
+        exit={{ opacity: 0, transformOrigin: `${left}% ${top}%`, transform: 'scale(0)' }}
+        transition={{ duration: 1 }}
+        >
+            {surroundingBubbleDivs}
+            <div className='warp-btn'
+                 onClick={() => navigate(link)}
+                 style={{
+                    top: `${top}%`,
+                    left: `${left}%`
+                }}>
                 <h1>{text}</h1>
-            </motion.div>
-        </>
+            </div>
+        </motion.div>
     )
 }
 
