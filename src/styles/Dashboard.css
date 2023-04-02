@@ -198,14 +198,15 @@
   .slider {
     height: 0;
 	  width: 0;
+    padding: 0;
+    margin-top: -.5vw;
 	  visibility: hidden;
   }
 
   .notif-switch {
     cursor: pointer;
-    width: 7vh;
-    height: 4vh;
-    margin-top: .5vh;
+    width: 3.5vw;
+    height: 2vw;
     margin-right: 1vw;
     background: var(--lightbluegrey);
     display: block;
@@ -216,10 +217,10 @@
   .notif-switch::after {
     content: '';
     position: absolute;
-    top: .5vh;
-    left: .5vh;
-    width: 3vh;
-    height: 3vh;
+    top: .25vw;
+    left: .25vw;
+    width: 1.5vw;
+    height: 1.5vw;
     background-color: var(--darkdarkblue);
     border-radius: 50%;
     transition: 0.3s;
@@ -230,12 +231,12 @@
   }
 
   .slider:checked + .notif-switch::after {
-    left: calc(100% - .5vh);
+    left: calc(100% - .3vw);
 	  transform: translateX(-100%);
   }
 
   .notif-switch:active::after {
-    width: 3vh;
+    width: 1.5vw;
   }
 
   .add-event {
@@ -320,7 +321,7 @@
   }
 
   .journal-entry-text {
-    line-height: 2vh;
+    line-height: 2.5vh;
     font-size: 1vw;
     text-decoration: line-through;
     text-decoration-color: transparent;

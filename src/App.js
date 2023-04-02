@@ -28,7 +28,7 @@ function App() {
 
   const [queriedRecommendations, setQueriedRecommendations] = useState([])
   const [userId, setUserId] = useState(-1)
-  const [notifState, setNotifState] = useState(false)
+  const [notifState, setNotifState] = useState(0)
 
   useEffect(() => {
     document.title = `Pufferfish`
