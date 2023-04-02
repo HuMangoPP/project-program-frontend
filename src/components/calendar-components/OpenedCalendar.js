@@ -10,7 +10,9 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
 
     const [calendarEvents, setCalendarEvents] = useState([])
 
-    const [date, setDate] = useState(new Date())
+    const [currDate, setDate] = useState(new Date())
+
+    const [hasReminder, setHasReminder] = useState({})
 
     const handleGetEvents = () => {
 
@@ -18,9 +20,15 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
             const res = await instance.get('/getreminders', {
                 params: {
                     userid: userId,
-                    date: date.toLocaleDateString(),
+                    date: currDate.toLocaleDateString(),
                 }
             })
+
+            let whichHasReminder = {}
+            for (let date of res.data.Date) {
+                whichHasReminder[date] = true
+            }
+            setHasReminder(whichHasReminder)
             
             let events = res.data.ReminderID.map((e, i) => {
                 return {
@@ -31,7 +39,7 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
             })
 
             events = events.filter((e, i) => {
-                return e.dateTime == date.toLocaleDateString()
+                return e.dateTime == currDate.toLocaleDateString()
             })
 
             setCalendarEvents(events)
@@ -50,7 +58,7 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                 params: {
                     userid: userId,
                     Title: title,
-                    date: date.toLocaleDateString(),
+                    date: currDate.toLocaleDateString(),
                 }
             })
     
@@ -93,7 +101,7 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
 
     useEffect(() => {
         handleGetEvents()
-    }, [date])
+    }, [currDate])
 
     return (
         <motion.div className='opened-calendar'
@@ -104,7 +112,22 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
         transition={{ duration: 1 }}
         >
             <div className='calendar-container'>
-                <Calendar onChange={setDate} value={date} />
+                <Calendar onChange={setDate} value={currDate} 
+                          tileContent={({ date }) => {
+                            const shouldShow = date.toLocaleDateString() in hasReminder
+                            return <div 
+                                    style={{
+                                        display: `${shouldShow ? 'block' : 'none'}`,
+                                        backgroundColor: 'var(--lightred)',
+                                        height: '.5vw',
+                                        width: '.5vw',
+                                        position: 'absolute',
+                                        transform: 'translate(2.75vw, -2.25vh)',
+                                        borderRadius: '50%',
+                                    }}
+                                    />
+                          }} 
+                           />
             </div>
             <CalendarEvents eventData={calendarEvents} openForm={() => setCalendarForm(true)}
                             handleDelete={handleDeleteEvents} 

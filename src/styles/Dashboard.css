@@ -123,8 +123,8 @@
     position: relative;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    width: 75%;
+    flex-direction: row;
+    width: 100%;
     padding: 4vh 2.5vw;
     left: 50%;
     transform: translate(-50%, 0);
@@ -137,7 +137,7 @@
     background-color: white;
     line-height: .75vh;
     text-align: left;
-    height: 57%;
+    height: 50%;
 
     box-shadow: var(--darkdarkblue) 0px 20px 25px -5px, var(--darkdarkblue) 0px 10px 10px -5px;
   }
@@ -147,7 +147,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: .75vh;
-    font-size: 1vw;
+    font-size: .85vw;
   }
 
   .calendar-events-list {
@@ -203,9 +203,9 @@
 
   .notif-switch {
     cursor: pointer;
-    width: 3.5vw;
+    width: 7vh;
     height: 4vh;
-    margin-top: 1vh;
+    margin-top: .5vh;
     margin-right: 1vw;
     background: var(--lightbluegrey);
     display: block;
@@ -220,7 +220,7 @@
     left: .5vh;
     width: 3vh;
     height: 3vh;
-    background: var(--darkdarkblue);
+    background-color: var(--darkdarkblue);
     border-radius: 50%;
     transition: 0.3s;
   }
