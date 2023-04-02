@@ -10,7 +10,7 @@ This web app features a personal dashboard where users can get lifestyle advice 
 
 ### Technologies Used
 
-* (NLP model built with scikit-learn)[https://github.com/jpnoro2003/ProjectProgram-habits]
+* [NLP model built with scikit-learn](https://github.com/jpnoro2003/ProjectProgram-habits)
 
 * Backend built with Flask and deployed on PythonAnywhere
 
