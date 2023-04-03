@@ -8,19 +8,22 @@
     line-height: 1.25vh;
     padding-top: 1.25vh;
     padding-bottom: 2.5vh;
-    padding-inline-start: .75vw;
+    padding-inline: .75vw;
 
     box-shadow: var(--darkdarkblue) 0px 20px 25px -5px, var(--darkdarkblue) 0px 10px 10px -5px;
   }
 
   .react-calendar__navigation {
+    padding-inline: 0;
+    margin-inline-end: 0;
     margin-bottom: 3vh;
     width: 100%;
   }
   
   .react-calendar__navigation button {
     color: var(--darkblue);
-    min-width: 5vw;
+    left: 0;
+    padding-inline: .5vw;
     background: none;
     font-size: 1.5vw;
     margin-top: 1.5vh;

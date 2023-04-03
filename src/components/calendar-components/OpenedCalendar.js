@@ -15,7 +15,7 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
     const [hasReminder, setHasReminder] = useState({})
 
     const formatDateString = ({ year, month, date}) => {
-        const dateString = `${year}/${month}/${date}`
+        const dateString = `${year}/${('0'+month).slice(-2)}/${('0'+date).slice(-2)}`
         return dateString
     }
 
