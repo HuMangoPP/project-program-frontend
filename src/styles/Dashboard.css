@@ -231,7 +231,7 @@
   }
 
   .slider:checked + .notif-switch::after {
-    left: calc(100% - .3vw);
+    left: calc(100% - .25vw);
 	  transform: translateX(-100%);
   }
 

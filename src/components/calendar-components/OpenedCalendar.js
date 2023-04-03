@@ -14,16 +14,25 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
 
     const [hasReminder, setHasReminder] = useState({})
 
+    const formatDateString = ({ year, month, date}) => {
+        const dateString = `${year}/${month}/${date}`
+        return dateString
+    }
+
     const handleGetEvents = () => {
 
         const getEvents = async () => {
             const res = await instance.get('/getreminders', {
                 params: {
                     userid: userId,
-                    date: currDate.toLocaleDateString(),
+                    date: formatDateString({
+                        year: currDate.getFullYear(),
+                        month: currDate.getMonth() + 1,
+                        date: currDate.getDate(),
+                    }),
                 }
             })
-
+            
             let whichHasReminder = {}
             for (let date of res.data.Date) {
                 whichHasReminder[date] = true
@@ -39,7 +48,11 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
             })
 
             events = events.filter((e, i) => {
-                return e.dateTime == currDate.toLocaleDateString()
+                return e.dateTime === formatDateString({
+                    year: currDate.getFullYear(),
+                    month: currDate.getMonth() + 1,
+                    date: currDate.getDate(),
+                })
             })
 
             setCalendarEvents(events)
@@ -58,7 +71,11 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                 params: {
                     userid: userId,
                     Title: title,
-                    date: currDate.toLocaleDateString(),
+                    date: formatDateString({
+                        year: currDate.getFullYear(),
+                        month: currDate.getMonth() + 1,
+                        date: currDate.getDate(),
+                    }),
                 }
             })
     
@@ -114,7 +131,11 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
             <div className='calendar-container'>
                 <Calendar onChange={setDate} value={currDate} 
                           tileContent={({ date }) => {
-                            const shouldShow = date.toLocaleDateString() in hasReminder
+                            const shouldShow = (formatDateString({
+                                year: date.getFullYear(),
+                                month: date.getMonth()+1,
+                                date: date.getDate(),
+                            }) in hasReminder)
                             return <div 
                                     style={{
                                         display: `${shouldShow ? 'block' : 'none'}`,
