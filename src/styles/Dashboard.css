@@ -1,10 +1,10 @@
 .single-task-page {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute;
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     text-align: center;
@@ -13,16 +13,9 @@
   .single-task-header {
     position: absolute;
     width: 100%;
+    left: 0;
     color: white;
-    font-size: 3vh;
-  }
-
-  .calendar-half {
-    width: 50%;
-  }
-
-  .journal-half {
-    width: 50%;
+    font-size: 4vh;
   }
   
   .closed-calendar {
@@ -164,7 +157,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: .75vh;
-    font-size: .85vw;
+    font-size: .8vw;
   }
 
   .calendar-events-list {
@@ -188,12 +181,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 2vh;
+    font-size: 1vw;
   }
   
   .calendar-event-text {
     width: 100%;
-    font-size: 2.25vh;
+    font-size: 1.25vw;
     line-height: 2.25vh;
     height: auto;
     overflow: hidden;
@@ -216,7 +209,7 @@
     height: 0;
 	  width: 0;
     padding: 0;
-    margin-top: -.5vw;
+    margin-top: -.5vh;
 	  visibility: hidden;
   }
 
@@ -309,7 +302,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: .75vh;
-    font-size: 1vw;
+    font-size: .8vw;
   }
 
   .journal-entries-list {
@@ -338,8 +331,8 @@
   }
 
   .journal-entry-text {
-    line-height: 2.5vh;
-    font-size: 1vw;
+    line-height: 2vw;
+    font-size: 1.1vw;
     text-decoration: line-through;
     text-decoration-color: transparent;
 
@@ -383,7 +376,7 @@
   }
 
   .new-calendar-event h1 {
-    font-size: 1.75vw;
+    font-size: 1.6vw;
     margin-bottom: 0;
   }
 
@@ -391,7 +384,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 1vw;
+    font-size: 1.25vw;
     margin-block: .5vh;
   }
 
@@ -400,7 +393,7 @@
     padding-inline: .75vw;
     border: 1px solid black;
     border-bottom: .5vh solid black;
-    font-size: 2vh;
+    font-size: 1.25vw;
     height: 5vh;
     resize: none;
   }
@@ -509,7 +502,7 @@
   }
 
   .habit-ribbon-text {
-    font-size: 1vw;
+    font-size: 1.1vw;
     padding-inline: .5vw;
     vertical-align: middle;
     
@@ -530,4 +523,10 @@
   .ribbon-top, .ribbon-bottom {
     width: 100%;
     height: 50%;
+  }
+
+  @media (max-width: 800px) {
+    .single-task-page {
+      flex-direction: column;
+    }
   }
