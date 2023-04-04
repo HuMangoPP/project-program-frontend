@@ -35,10 +35,8 @@ const SingleTaskPage = ({ instance, userId, setNotifState, notifState }) => {
             exit={{ opacity: 0, transform: 'translate(0, -50vh)' }}
             transition={{ duration: 1 }}
             >
-                <h1>Dashboard</h1>
+                {(journalOpen || calendarOpen) ? <></> : <h1>Dashboard</h1>}
             </motion.div>
-            <WarpButton link='/journal' text='Return to Journal' 
-                        top={80} left={50} size={15} />
             <div className='calendar-half' onClick={() => {
                 const el = document.getElementsByClassName('opened-journal')[0]
                 if (!el) return
@@ -66,6 +64,8 @@ const SingleTaskPage = ({ instance, userId, setNotifState, notifState }) => {
                 <OpenedJournal instance={instance} userId={userId} /> : 
                 <ClosedJournal onOpen={() => setJournalOpen(true)} />}
             </div>
+            <WarpButton link='/journal' text='Return to Journal' 
+                        top={80} left={50} size={15} />
         </motion.div> 
     )
 }

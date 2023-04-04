@@ -74,21 +74,38 @@
     cursor: pointer;
   }
 
-  .animate-opening {
+  .animate-calendar-opening {
+    position: absolute;
+    background-color: var(--discordblue);
     border-radius: 0;
     pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 25%;
+    top: 50%;
     width: 50%;
     height: 100%;
 
-    transition: border-radius 1s, width 1s, height 1s;
+    transition: border-radius .9s, width .9s, height .9s;
   }
 
-  .animate-closing {
-    border-radius: 50%;
-    width: 25vh;
-    height: 25vh;
+  .animate-journal-opening {
+    position: absolute;
+    background-color: var(--discordblue);
+    border-radius: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    right: 25%;
+    top: 50%;
+    width: 50%;
+    height: 100%;
 
-    transition: border-radius 1s, width 1s, height 1s;
+    transition: border-radius .9s, width .9s, height .9s;
   }
   
   .opened-calendar {
@@ -101,7 +118,7 @@
   }
 
   .calendar-animate-close {
-    transition: left .5s;
+    transition: left .45s;
     left: -50%
   }
   
@@ -115,7 +132,7 @@
   }
 
   .journal-animate-close {
-    transition: right .5s;
+    transition: right .45s;
     right: -50%
   }
   
