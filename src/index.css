@@ -130,6 +130,7 @@ button:hover {
 }
 
 .warp-btn {
+  pointer-events: all;
   position: absolute;
   border-radius: 50%;
   background-color: var(--discordblue);

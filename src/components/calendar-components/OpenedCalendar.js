@@ -154,6 +154,7 @@ const OpenedCalendar = ({ instance, userId, setNotifState, notifState }) => {
                             handleDelete={handleDeleteEvents} 
                             handleToggle={handleNotifToggle}
                             notifState={notifState} />
+            <div style={{ height: '5%' }} />
             {calendarForm ? <NewCalendarEvent   closeForm={() => setCalendarForm(false)}
                                                 handleSubmit={handlePostEvents} /> : <div />}
         </motion.div>

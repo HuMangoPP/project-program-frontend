@@ -6,10 +6,12 @@ const ClosedCalendar = ({ onOpen }) => {
         <motion.div className='closed-calendar'
             onClick={() => {
                 const el = document.getElementsByClassName('closed-calendar')[0]
-                el.classList.add('animate-opening')
+                el.classList.add('animate-calendar-opening')
+                el.classList.remove('closed-calendar')
                 setTimeout(() => {
                     onOpen()
-                    el.classList.remove('animate-opening')
+                    el.classList.remove('animate-calendar-opening')
+                    el.classList.add('closed-calendar')
                 }, 1000)}}
                 
             initial={{ opacity: 0, transform: 'translate(-50%, -50%) scale(0)' }}

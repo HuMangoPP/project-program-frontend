@@ -6,10 +6,12 @@ const ClosedJournal = ({ onOpen }) => {
         <motion.div className='closed-journal'
             onClick={() => {
                 const el = document.getElementsByClassName('closed-journal')[0]
-                el.classList.add('animate-opening')
+                el.classList.add('animate-journal-opening')
+                el.classList.remove('closed-journal')
                 setTimeout(() => {
                     onOpen()
-                    el.classList.remove('animate-opening')
+                    el.classList.remove('animate-journal-opening')
+                    el.classList.add('closed-journal')
                 }, 1000)}}
                 
             initial={{ opacity: 0, transform: 'translate(50%, -50%) scale(0)' }}
